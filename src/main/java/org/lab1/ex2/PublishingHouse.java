@@ -1,4 +1,4 @@
-package org.main;
+package org.lab1.ex2;
 
 public class PublishingHouse {
 

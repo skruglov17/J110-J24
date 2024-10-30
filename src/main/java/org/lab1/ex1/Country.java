@@ -1,4 +1,4 @@
-package org.main;
+package org.lab1.ex1;
 
 public class Country {
 

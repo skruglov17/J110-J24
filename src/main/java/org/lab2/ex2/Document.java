@@ -1,4 +1,4 @@
-package org.main;
+package org.lab2.ex2;
 
 public class Document extends File {
 
