@@ -1,7 +1,5 @@
 package org.lab2.ex2;
 
-import java.nio.file.Files;
-
 public class Multimedia extends File {
 
     private Picture picture;
