@@ -1,9 +1,7 @@
-package org.lab2.ex2;
+package src.main.java.org.lab2.ex2;
 
-import static org.lab2.ex2.File.printAll;
-
-public class Main {
-    public static void main(String[] args) throws Exception {
+public class Exercise {
+    public static void startEx() throws Exception {
 
 
         File[] arrayFiles = new File[4];

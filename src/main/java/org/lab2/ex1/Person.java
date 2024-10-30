@@ -1,4 +1,4 @@
-package org.lab2.ex1;
+package src.main.java.org.lab2.ex1;
 
 public abstract class Person {
 

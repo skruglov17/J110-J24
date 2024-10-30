@@ -1,4 +1,4 @@
-package org.lab1.ex1;
+package src.main.java.org.lab1.ex1;
 
 public class Country {
 
@@ -41,7 +41,7 @@ public class Country {
         return this.nameCapital;
     }
 
-    public double getSquare() {
+    public int getSquare() {
         return this.square;
     }
 
@@ -94,11 +94,11 @@ public class Country {
     //метод возвращающий информацию о стране
     public void print() {
         if (this.nameCapital == null)
-            System.out.println(this.getName() + ", " + this.getSquare() + " кв. км., " + this.getPopulation() + " чел., " + "-");
+            System.out.println(this.getName() + ", " + this.getSquare() + ".0 кв. км., " + this.getPopulation() + " чел., " + "-");
         else if(this.population <= 0 || this.populationCapital <= 0)
-            System.out.println(this.getName() + ", " + this.getSquare() + " кв. км., " + this.getNameCapital());
+            System.out.println(this.getName() + ", " + this.getSquare() + ".0 кв. км., " + this.getNameCapital());
         else
-            System.out.println(this.getName() + ", " + this.getSquare() + " кв. км., " + this.getPopulation() + " чел., " + this.getNameCapital() + ", " + this.getPopulationCapital() + " чел.");
+            System.out.println(this.getName() + ", " + this.getSquare() + ".0 кв. км., " + this.getPopulation() + " чел., " + this.getNameCapital() + ", " + this.getPopulationCapital() + " чел.");
     }
 
     //метод, возвращающий информацию в пределах заданного массива

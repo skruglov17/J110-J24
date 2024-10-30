@@ -1,10 +1,10 @@
-package org.lab1.ex2;
+package src.main.java.org.lab1.ex2;
 
-public class Main {
+public class Exercise {
 
 
 
-    public static void main(String[] args) throws Exception {
+    public static void startEx() throws Exception {
 
         //Создаём массив издательств
         PublishingHouse publishingHouseArray[] = new PublishingHouse[4];
