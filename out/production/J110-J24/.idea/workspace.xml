@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ad6234-8326-4f64-a942-019255fe1bff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/J110-J24.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/J110-J24.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab1/ex1/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab1/ex1/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab1/ex1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab1/ex1/Exercise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab1/ex2/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab1/ex2/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab1/ex2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab1/ex2/Exercise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab1/ex2/PublishingHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab1/ex2/PublishingHouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/AcademicDegree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/AcademicDegree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/LevelingStudy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/LevelingStudy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Exercise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Sex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Sex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/FileFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/FileFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/Exercise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/Multimedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/Multimedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex2/Picture.java" afterDir="false" />
-    </list>
+    <list default="true" id="e6ad6234-8326-4f64-a942-019255fe1bff" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +45,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Master",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
