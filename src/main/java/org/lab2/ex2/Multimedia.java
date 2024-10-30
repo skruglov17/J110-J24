@@ -1,4 +1,4 @@
-package org.lab2.ex2;
+package src.main.java.org.lab2.ex2;
 
 public class Multimedia extends File {
 

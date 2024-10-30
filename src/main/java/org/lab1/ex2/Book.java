@@ -1,4 +1,4 @@
-package org.lab1.ex2;
+package src.main.java.org.lab1.ex2;
 
 import java.util.Arrays;
 

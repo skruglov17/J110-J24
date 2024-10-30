@@ -1,7 +1,7 @@
-package org.lab2.ex1;
+package src.main.java.org.lab2.ex1;
 
-public class Main {
-    public static void main(String[] args) throws Exception{
+public class Exercise {
+    public static void startEx() throws Exception{
 
         Teacher[] teachers = new Teacher[2];
         teachers[0] = new Teacher("Ronald", "Turner", Sex.MALE, "Computer Science", AcademicDegree.PhD, "Programming paradigms");
