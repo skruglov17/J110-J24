@@ -17,13 +17,11 @@ public class Book {
     }
 
     //конструктор с массивом авторов
-    public Book(String name, int yearPublication, PublishingHouse publishingHouse, String[] authorsArray) {
+    public Book(String name, int yearPublication, PublishingHouse publishingHouse, String[] authorsArray) throws Exception {
         this.name = name;
         this.yearPublication = yearPublication;
         this.publishingHouse = publishingHouse;
-
-        String[] authorsBookArray = new String[authorsArray.length];
-        this.authorsBookArray = authorsArray;
+        setAuthorsArray(authorsArray);
     }
 
     //get-методы
@@ -78,6 +76,7 @@ public class Book {
         for (int i = 0; i < authorsArray.length; i++) {
             if(authorsArray[i] == null || authorsArray[i].equals("")) new Exception("Передана пустая строка!");
         }
+        String[] authorsBookArray = new String[authorsArray.length];
         this.authorsBookArray = authorsArray;
     }
 

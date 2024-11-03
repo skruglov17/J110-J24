@@ -17,5 +17,8 @@ public class Main {
 
         //Запуск ЛР2.Упражнение 2
         //src.main.java.org.lab2.ex2.Exercise.startEx();
+
+        //Запуск ЛР3.Упражнение 1
+        //src.main.java.org.lab3.ex1.Exercise.startEx();
     }
 }
