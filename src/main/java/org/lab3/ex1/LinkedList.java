@@ -194,6 +194,8 @@ public class LinkedList {
             case 10:
                 deleteData(data);
                 break;
+            default:
+                System.out.println("Передайте корректное значение действия!");
         }
     }
 

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ad6234-8326-4f64-a942-019255fe1bff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lab3/ex1/Exercise.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lab3/ex1/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab1/ex2/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab1/ex2/Book.java" afterDir="false" />
+    <list default="true" id="9fc192c0-9ae6-4f6f-af3a-d13aee73ef5c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab3/ex2/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab3/ex2/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab3/ex2/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab3/ex2/LinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,66 +24,42 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;skruglov17&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "skruglov17"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/skruglov17/J110-J24.git&quot;,
-    &quot;accountId&quot;: &quot;b2a29fec-bcf3-445f-aa8b-a1a0935ca4eb&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/skruglov17/J110-J24.git",
+    "accountId": "a5def350-df01-44e0-91c6-e1d8942f6345"
   }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2o9No5BDgAjUX2T69pvZzUXvyZU" />
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2oQSWjAqXR8Ii17tAlO62wmUbGo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Lab3__2",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main.java.org.Main" />
-      <module name="J110-J24" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.main.java.org.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e6ad6234-8326-4f64-a942-019255fe1bff" name="Changes" comment="" />
-      <created>1730278003751</created>
+      <changelist id="9fc192c0-9ae6-4f6f-af3a-d13aee73ef5c" name="Changes" comment="" />
+      <created>1730800339706</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1730278003751</updated>
+      <updated>1730800339706</updated>
     </task>
     <servers />
   </component>
