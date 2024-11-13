@@ -136,7 +136,7 @@ public class LinkedList {
      * Определение, содержит ли список заданное значение.
      * @param data - данные, по которым осуществляется поиск.
      * @return true - данные присутствуют в списке.
-     *         false - данные отсутствуют в списке.
+     * @return false - данные отсутствуют в списке.
      */
     public Boolean checkData(String data) {
         Node temp = getHead();
