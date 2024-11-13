@@ -1,41 +1,74 @@
 package src.main.java.org.lab2.ex2;
 
+/**
+ * Файл
+ */
 public abstract class File {
 
     private String name;
     private int size;
     private FileFormat format;
 
-    //конструктор
+    /**
+     * Конструктор файла.
+     * @param name - Название файла.
+     * @param size - Размер файла.
+     * @param format - Формат файла.
+     */
     public File(String name, int size, FileFormat format) {
         this.name = name;
         this.size = size;
         this.format = format;
     }
 
-    //геттеры и сеттеры
+    /**
+     * Получение названия файла.
+     * @return name - Название файла.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Определение названия файла.
+     * @param name - Название файла.
+     */
     public void setName(String name) throws Exception {
         if(name==null || name.equals("")) throw new Exception("Введено некорректное имя файла!");
         this.name = name;
     }
 
+    /**
+     * Получение размера файла.
+     * @return size - Размер файла.
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * Определение размера файла.
+     * @param size - Размер файла
+     * @throws Exception
+     */
     public void setSize(int size) throws Exception {
         if(size<0) throw new Exception("Введен некорректный размер файла!");
         this.size = size;
     }
 
+    /**
+     * Получение формата файла.
+     * @return format - Формат файла.
+     */
     public FileFormat getFormat() {
         return format;
     }
 
+    /**
+     * Определение формата файла.
+     * @param format - Формат файла.
+     * @throws Exception
+     */
     public void setFormat(FileFormat format) throws Exception {
         if(format == null) throw new Exception("Введен некорретный формат файла!");
         this.format = format;
@@ -45,6 +78,9 @@ public abstract class File {
 
     }
 
+    /**
+     * Вывод информации в консоль в виде таблицы
+     */
     @Override
     public String toString() {
         return this.getName() + "." + this.getFormat();
@@ -72,35 +108,35 @@ public abstract class File {
         System.out.println(longLine);
 
         //заполняем шапку данными
-            //пробелы перед и после File name
-            String spaceFileName = "";
-            for (int i = 0; i < (countName-9)/2; i++) {
-                spaceFileName = spaceFileName + " ";
-            }
-            //если количество симовлов в имени нечётное, то нужно добавить пробел
-            if((countName-9)%2==1) {
-                spaceFileName = spaceFileName + " ";
-                countName++;
-            }
-            //пробелы перед и после Size
-            String spaceSize = "";
-            for (int i = 0; i < (countSize-4)/2; i++) {
-                spaceSize = spaceSize + " ";
-            }
-            System.out.println(spaceFileName + "File name" + spaceFileName + "|" + spaceSize + "Size" + spaceSize + "|" + spaceSize + "Details");
+        //пробелы перед и после File name
+        String spaceFileName = "";
+        for (int i = 0; i < (countName-9)/2; i++) {
+            spaceFileName = spaceFileName + " ";
+        }
+        //если количество симовлов в имени нечётное, то нужно добавить пробел
+        if((countName-9)%2==1) {
+            spaceFileName = spaceFileName + " ";
+            countName++;
+        }
+        //пробелы перед и после Size
+        String spaceSize = "";
+        for (int i = 0; i < (countSize-4)/2; i++) {
+            spaceSize = spaceSize + " ";
+        }
+        System.out.println(spaceFileName + "File name" + spaceFileName + "|" + spaceSize + "Size" + spaceSize + "|" + spaceSize + "Details");
 
         //вторая горизонтальная линия
-            //минусы на длину имени
-            String _countName = "";
-            for (int i = 0; i < countName; i++) {
-                _countName = _countName + "-";
-            }
-            //минусы на длину размера
-            String _countSize = "";
-            for (int i = 0; i < countSize; i++) {
-                _countSize = _countSize + "-";
-            }
-            System.out.println(_countName + "+" + _countSize + "+" + "----------");
+        //минусы на длину имени
+        String _countName = "";
+        for (int i = 0; i < countName; i++) {
+            _countName = _countName + "-";
+        }
+        //минусы на длину размера
+        String _countSize = "";
+        for (int i = 0; i < countSize; i++) {
+            _countSize = _countSize + "-";
+        }
+        System.out.println(_countName + "+" + _countSize + "+" + "----------");
 
         //заполняем таблицу данными
         for (int i = min; i <= max; i++) {

@@ -1,12 +1,25 @@
 package src.main.java.org.lab2.ex2;
 
+import java.nio.file.Files;
+
+/**
+ * Файл мультимедиа.
+ */
 public class Multimedia extends File {
 
     private Picture picture;
     private int duration;
     private String description;
 
-    //конструктор для видеофайлов
+    /**
+     * Конструктор для видеофайлов.
+     * @param name - Название файла.
+     * @param size - Размер файла.
+     * @param format - Формат файла.
+     * @param picture - Картинка к файлу.
+     * @param duration - Длительность файла.
+     * @param description - Описание файла.
+     */
     public Multimedia(String name, int size, FileFormat format, Picture picture, int duration, String description) {
         super(name, size, format);
         this.picture = picture;
@@ -14,41 +27,70 @@ public class Multimedia extends File {
         this.description = description;
     }
 
-    //конструктор для прочих медиафайлов
+    /**
+     * Конструктор для прочих медиафайлов
+     * @param name - Название файла
+     * @param size - Размер файла.
+     * @param format - Формат файла.
+     * @param duration - Длительность файла.
+     * @param description - Описание файла.
+     */
     public Multimedia(String name, int size, FileFormat format, int duration, String description) {
         super(name, size, format);
         this.duration = duration;
         this.description = description;
     }
 
-    //геттеры и сеттеры
+    /**
+     * Получение картинки.
+     */
     public Picture getPicture() {
         return picture;
     }
 
+    /**
+     * Определение картинки.
+     * @param picture - Картинка.
+     */
     public void setPicture(Picture picture) throws Exception {
         if (picture == null) throw new Exception("Передана некорректная ссылка на картинку!");
         this.picture = picture;
     }
 
+    /**
+     * Получение длительности файла.
+     */
     public int getDuration() {
         return duration;
     }
 
+    /**
+     * Определение длительности файла.
+     * @param duration - Длительность.
+     */
     public void setDuration(int duration) throws Exception {
         if (duration < 0) throw new Exception("Передана некорректная длительность видеофайла!");
         this.duration = duration;
     }
 
+    /**
+     * Получение описания файла.
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Определение описания файла.
+     * @param description - Описание.
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
-    //вовзращает детали объекта
+    /**
+     * Получение деталей мультимедиа-файлов.
+     */
     @Override
     public void getDetails() {
         //приведём длительность в формат часы:минуты:секунды

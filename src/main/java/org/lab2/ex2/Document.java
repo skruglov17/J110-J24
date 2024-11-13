@@ -19,16 +19,27 @@ public class Document extends File {
         this.pageNumbers = pageNumbers;
     }
 
-
+    /**
+     * Получение количества страниц.
+     * @return
+     */
     public int getPageNumbers() {
         return pageNumbers;
     }
 
+    /**
+     * Определение количества страниц.
+     * @param pageNumbers - Количество страниц.
+     * @throws Exception
+     */
     public void setPageNumbers(int pageNumbers) throws Exception {
         if(pageNumbers < 1) throw new Exception("Введено неккоректное количество страниц документа!");
         this.pageNumbers = pageNumbers;
     }
 
+    /**
+     * Вывод в консоль детали по документу.
+     */
     @Override
     public void getDetails() {
         System.out.println(super.getFormat() + ", " + this.getPageNumbers() + " pages");

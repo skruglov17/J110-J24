@@ -25,6 +25,9 @@ public class Main {
         //src.main.java.org.lab3.ex2.Exercise.startEx();
 
         //Запуск ЛР3.Упражнение 3
-        src.main.java.org.lab3.ex3.Exercise.startEx();
+        //src.main.java.org.lab3.ex3.Exercise.startEx();
+
+        //Запуск ЛР4
+        src.main.java.org.lab4.Exercise.startEx();
     }
 }
