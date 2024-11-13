@@ -58,7 +58,7 @@ public class LinkedList {
             setTail(node);
         } else {
             //Если ноды есть
-            node.setNext(getHead());
+            node.next = getHead();
             setHead(node);
         }
     }
@@ -69,7 +69,7 @@ public class LinkedList {
      */
     public String extractHead(){
         if(getHead() != null) {
-            return getHead().getData();
+            return getHead().data;
         } else return "Список пуст!";
     }
 
@@ -81,8 +81,8 @@ public class LinkedList {
     public String extractWithDeleteHead(){
         if(getHead() != null) {
             String data = extractHead();
-            if(getHead().getNext() != null) {
-                setHead(getHead().getNext());
+            if(getHead().next != null) {
+                setHead(getHead().next);
             } else setHead(null);
             return data;
         } else return "Список пуст!";
@@ -99,7 +99,7 @@ public class LinkedList {
             addHead(data);
         } else {
             //Если ноды есть
-            getTail().setNext(node);
+            getTail().next = Node;
             setTail(node);
         }
     }
@@ -110,7 +110,7 @@ public class LinkedList {
      */
     public String extractTail() {
         if(getTail() != null) {
-            return getTail().getData();
+            return getTail().data;
         } else return "Список пуст!";
     }
 
@@ -123,11 +123,11 @@ public class LinkedList {
             String data = extractTail();
             Node temp = new Node();
             temp = getHead();
-            while(temp.getNext() != getTail()) {
-                temp = temp.getNext();
+            while(temp.next != getTail()) {
+                temp = temp.next;
             }
             setTail(temp);
-            getTail().setNext(null);
+            getTail().next = null;
             return data;
         } else return "Список пуст!";
     }
@@ -141,10 +141,10 @@ public class LinkedList {
     public Boolean checkData(String data) {
         Node temp = getHead();
         while(temp != null) {
-            if(temp.getData().equals(data)) {
+            if(temp.data.equals(data)) {
                 return true;
             }
-            temp = temp.getNext();
+            temp = temp.next;
         }
         return false;
     }
@@ -167,11 +167,11 @@ public class LinkedList {
     public String toString() {
         if(getHead() != null) {
             StringBuilder sb = new StringBuilder();
-            sb.append("[").append(getHead().getData());
+            sb.append("[").append(getHead().data);
             Node temp = getHead();
-            while(temp.getNext() != null) {
-                temp = temp.getNext();
-                sb.append(", ").append(temp.getData());
+            while(temp.next != null) {
+                temp = temp.next;
+                sb.append(", ").append(temp.data);
             }
             sb.append("]");
             return sb.toString();
@@ -186,11 +186,11 @@ public class LinkedList {
         Node temp = new Node();
         temp = getHead();
         while(temp != null) {
-            if(temp.getData().equals(data)) {
+            if(temp.data.equals(data)) {
                 //Если звено первое в списке
                 if(temp == getHead()) {
-                    if(getHead().getNext() != null) {
-                        setHead(getHead().getNext());
+                    if(getHead().next != null) {
+                        setHead(getHead().next);
                     } else {
                         setHead(null);
                         setTail(null);
@@ -200,23 +200,23 @@ public class LinkedList {
                 else if(temp == getTail()) {
                     Node temp_delete = new Node();
                     temp_delete = getHead();
-                    while(temp_delete.getNext() != getTail()) {
-                        temp_delete = temp_delete.getNext();
+                    while(temp_delete.next != getTail()) {
+                        temp_delete = temp_delete.next;
                     }
                     setTail(temp_delete);
-                    getTail().setNext(null);
+                    getTail().next = null;
                 }
                 //Если звено в середине
                 else {
                     Node temp_delete = new Node();
                     temp_delete = getHead();
-                    while(temp_delete.getNext() != temp) {
-                        temp_delete = temp_delete.getNext();
+                    while(temp_delete.next != temp) {
+                        temp_delete = temp_delete.next;
                     }
-                    temp_delete.setNext(temp.getNext());
+                    temp_delete.next = temp.next);
                 }
             }
-        temp = temp.getNext();
+        temp = temp.next;
         }
     }
 
@@ -296,40 +296,7 @@ public class LinkedList {
          * @param data - данные, которые будет хранить нода.
          */
         public Node(String data) {
-            this.setData(data);
-        }
-
-        /**
-         * Получение данных ноды.
-         * @return data  - данные ноды.
-         */
-        public String getData() {
-            return data;
-        }
-
-        /**
-         * Передача данных в ноду.
-         * @param data - данные, которые будут храниться в ноде.
-         */
-
-        public void setData(String data) {
-            this.data = data;
-        }
-
-        /**
-         * Получение следующей ноды.
-         * @return node.next - следующая нода списка.
-         */
-        public Node getNext() {
-            return next;
-        }
-
-        /**
-         * Установка следующей ноды
-         * @param next
-         */
-        public void setNext(Node next) {
-            this.next = next;
+            this.data;
         }
     }
 }

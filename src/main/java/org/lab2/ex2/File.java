@@ -113,7 +113,7 @@ public abstract class File {
         for (int i = 0; i < (countName-9)/2; i++) {
             spaceFileName = spaceFileName + " ";
         }
-        //если количество симовлов в имени нечётное, то нужно добавить пробел
+        //если количество символов в имени нечётное, то нужно добавить пробел
         if((countName-9)%2==1) {
             spaceFileName = spaceFileName + " ";
             countName++;

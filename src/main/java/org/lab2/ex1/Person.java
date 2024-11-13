@@ -71,7 +71,7 @@ public abstract class Person {
      * @param sex - Пол человека.
      */
     public void setSex(Sex sex) throws Exception {
-        if(sex==null || sex.equals("")) throw new Exception("Введен некорретный пол человека!");
+        if(sex==null) throw new Exception("Введен некорретный пол человека!");
         this.sex = sex;
     }
 

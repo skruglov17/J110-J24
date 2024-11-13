@@ -32,9 +32,7 @@ public class Book {
      * @param authorsArray - массив авторов книги.
      */
     public Book(String name, int yearPublication, PublishingHouse publishingHouse, String[] authorsArray) throws Exception {
-        setName(name);
-        setYearPublication(yearPublication);
-        setPublishingHouse(publishingHouse);
+        this(name, yearPublication, publishingHouse);
         setAuthorsArray(authorsArray);
     }
 
@@ -131,8 +129,7 @@ public class Book {
         for (int i = 0; i < authorsArray.length; i++) {
             if(authorsArray[i] == null || authorsArray[i].equals("")) throw new Exception("Передана пустая строка!");
         }
-        String[] authorsBookArray = new String[authorsArray.length];
-        this.authorsBookArray = authorsArray;
+        this.authorsBookArray = new String[authorsArray.length];
     }
 
     /**

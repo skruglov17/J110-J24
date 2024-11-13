@@ -23,9 +23,7 @@ public class Country {
      * @param populationCapital - Кол-во жителей столицы.
      */
     public Country(String name, String nameCapital, int square, int population, int populationCapital) throws Exception {
-        setName(name);
-        setNameCapital(nameCapital);
-        setSquare(square);
+        this(name, nameCapital, square);
         setPopulation(population);
         setPopulationCapital(populationCapital);
     }
