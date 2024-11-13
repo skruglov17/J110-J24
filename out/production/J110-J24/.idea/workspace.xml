@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6ad6234-8326-4f64-a942-019255fe1bff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab3/ex1/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab3/ex1/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab3/ex2/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab3/ex2/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab1/ex2/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab1/ex2/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/AcademicDegree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/AcademicDegree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/LevelingStudy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/LevelingStudy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Sex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Sex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab2/ex1/Teacher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

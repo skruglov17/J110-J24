@@ -11,7 +11,7 @@ public class Exercise {
         students[0] = new Student("Leo", "Wilkinson", Sex.MALE, "Computer Science", LevelingStudy.BACHELOR, 3);
         students[1] = new Student("Anna", "Cunningham", Sex.FEMALE, "World economy", LevelingStudy.BACHELOR, 1);
         students[2] = new Student("Jill", "Lundqvist", Sex.FEMALE, "Jurisprudence", LevelingStudy.MASTER, 1);
-        students[3] = new Student("Ronald", "Correa", Sex.MALE, "Computer Science", LevelingStudy.ASPIRANT, "Design of a functional programming language");
+        students[3] = new Student("Ronald", "Correa", Sex.MALE, "Computer Science", "Design of a functional programming language");
 
         Teacher.printAll(teachers, 0, 1);
         Student.printAll(students, 0, 3);

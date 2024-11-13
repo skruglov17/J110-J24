@@ -1,16 +1,24 @@
 package src.main.java.org.lab2.ex2;
 
+/**
+ * Документ.
+ */
 public class Document extends File {
 
     private int pageNumbers;
 
-    //конструктор
+    /**
+     * Конструктор документа.
+     * @param name - Название документа.
+     * @param size - Размер документа в байтах.
+     * @param format - Формат документа.
+     * @param pageNumbers - Количество страниц документа.
+     */
     public Document(String name, int size, FileFormat format, int pageNumbers) {
         super(name, size, format);
         this.pageNumbers = pageNumbers;
     }
 
-    //геттеры и сеттеры
 
     public int getPageNumbers() {
         return pageNumbers;
