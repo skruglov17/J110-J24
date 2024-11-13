@@ -1,8 +1,8 @@
 package src.main.java.org.lab3.ex1;
 
-public class Exercise {
+public class Main {
 
-    public static void startEx() throws Exception {
+    public static void main(String[] args) throws Exception {
 
         LinkedList linkedList = new LinkedList();
         linkedList.add("0");

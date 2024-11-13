@@ -1,8 +1,8 @@
 package src.main.java.org.lab1.ex1;
 
-public class Exercise {
+public class Main {
 
-    public static void startEx() throws Exception {
+    public static void main(String[] args) throws Exception {
 
         //Создаём массив стран и заполняем его значениями
         Country countryArray[] = new Country[6];
@@ -14,7 +14,5 @@ public class Exercise {
         countryArray[5] = new Country("Singapore", 725, 5700000);
 
         Country.printAll(countryArray, 0, 6);
-
-
     }
 }

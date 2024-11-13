@@ -1,24 +1,35 @@
-package src.main.java.org.lab3.ex2;
+package src.main.java.org.lab3.ex3;
 
-import java.util.ArrayList;
+public class Main {
 
-public class Exercise {
-
-
-    public static void startEx() throws Exception {
+    public static void main(String[] args) throws Exception {
 
         LinkedList linkedList = new LinkedList();
-        linkedList.add("0");
-        linkedList.add("1");
-        linkedList.add("2");
-        linkedList.add("3");
-        linkedList.add("4");
-        linkedList.add("5");
-        linkedList.add("6");
-        linkedList.add("7");
-        linkedList.add("8");
-        linkedList.add("9");
-        linkedList.add("10");
+        linkedList.addHead("10");
+        linkedList.addHead("9");
+        linkedList.addHead("8");
+        linkedList.addHead("7");
+        linkedList.addHead("6");
+        linkedList.addHead("5");
+        linkedList.addHead("4");
+        linkedList.addHead("3");
+        linkedList.addHead("2");
+        linkedList.addHead("1");
+        linkedList.addHead("0");
+        linkedList.addHead("-1");
+        linkedList.add("11");
+
+        LinkedList secondLinkedList = new LinkedList();
+        secondLinkedList.add("101");
+        secondLinkedList.add("102");
+        secondLinkedList.add("103");
+        secondLinkedList.add("104");
+        secondLinkedList.add("105");
+        secondLinkedList.add("106");
+        secondLinkedList.add("107");
+        secondLinkedList.add("108");
+        secondLinkedList.add("109");
+        secondLinkedList.add("110");
 
         //Выполнение действия, заданного в параметре метода, для каждого значения из списка
         /*
@@ -40,34 +51,12 @@ public class Exercise {
                                         11  - Вывод значения из конца списка
                                         12  - Вывод значения из конца списка с последующим удалением
                                         13 - Вывод всех значений списка
-                                        14 - Вывод всех значений списка наоборот
-                                        15 - Удаление заданного значения из списка
-                                        16 - Поглощение списка другим списком с добавлением значений второго в начало первого списка
-                                        17 - Поглощение списка другим списком с добавлением значений второго в конец первого списка
+                                        14 - Удаление заданного значения из списка
+                                        15 - Поглощение списка другим списком с добавлением значений второго в начало первого списка
+                                        16 - Поглощение списка другим списком с добавлением значений второго в конец первого списка
         */
 
-        linkedList.action(2, new String[]{"-5", "-4", "-3", "-2", "-1"});
         linkedList.action(13);
 
-        ArrayList<String> collection = new ArrayList<String>();
-        collection.add("11");
-        collection.add("12");
-        collection.add("13");
-        collection.add("14");
-        collection.add("15");
-        collection.add("16");
-
-        linkedList.action(6, collection);
-        linkedList.action(13);
-
-        LinkedList linkedListSecond = new LinkedList();
-        linkedListSecond.add("17");
-        linkedListSecond.add("18");
-        linkedListSecond.add("19");
-        linkedListSecond.add("20");
-        linkedListSecond.add("21");
-
-        linkedList.action(17, linkedList, linkedListSecond);
-        linkedList.action(13);
     }
 }

@@ -19,8 +19,8 @@ public class Student extends Person {
      */
     public Student(String firstName, String secondName, Sex sex, String nameFaculty, String dissertationTopic) throws Exception {
         super(firstName, secondName, sex, nameFaculty);
-        setDissertationTopic(dissertationTopic);
         setLevelingStudy(LevelingStudy.ASPIRANT);
+        setDissertationTopic(dissertationTopic);
     }
 
     /**

@@ -1,8 +1,8 @@
 package src.main.java.org.lab4;
 
-public class Exercise {
+public class Main {
 
-    public static void startEx() throws Exception {
+    public static void main(String[] args) throws Exception {
 
         LogicInterface logic = new IntegerLogic();
 

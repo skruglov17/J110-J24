@@ -1,7 +1,7 @@
 package src.main.java.org.lab2.ex2;
 
-public class Exercise {
-    public static void startEx() throws Exception {
+public class Main {
+    public static void main(String[] args) throws Exception {
 
 
         File[] arrayFiles = new File[4];
