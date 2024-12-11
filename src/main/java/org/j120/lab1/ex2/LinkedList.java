@@ -1,76 +1,43 @@
-package src.main.java.org.j110.lab3.ex1;
+package src.main.java.org.j120.lab1.ex2;
+
+import java.util.Iterator;
 
 /**
  * Односвязанный список.
  * Состоит из нод и имеет ссылки на первую и последнюю ноды списка.
  * Имеет только прямую связь между нодами.
  */
-public class LinkedList {
+public class LinkedList<T> implements Iterable<T> {
 
     private Node head;
     private Node tail;
 
     /**
-     * Получение первой ноды списка.
-     * @return head - первая нода списка.
-     */
-
-    public Node getHead() {
-        return head;
-    }
-
-    /**
-     * Установка первой ноды списка.
-     * @param head - первая нода списка к установке.
-     */
-
-    public void setHead(Node head) {
-        this.head = head;
-    }
-
-    /**
-     * Получение последней ноды списка.
-     * @return tail - последняя нода списка.
-     */
-
-    public Node getTail() {
-        return tail;
-    }
-
-    /**
-     * Установка последней ноды списка.
-     * @param tail - последняя нода списка к установке.
-     */
-
-    public void setTail(Node tail) {
-        this.tail = tail;
-    }
-
-    /**
-    * Добавление значения в начало списка.
+     * Добавление значения в начало списка.
      * @param data - данные первой ноды списка к установке.
      */
-    public void addHead(String data) {
-        Node node = new Node(data);
+    public void addHead(T data) {
+        Node node = new Node();
+        node.data = data;
         //Проверка есть ли ноды в списке
-        if(getHead() == null) {
-            setHead(node);
-            setTail(node);
+        if(head == null) {
+            head = node;
+            tail = node;
         } else {
             //Если ноды есть
-            node.next = getHead();
-            setHead(node);
+            node.next = head;
+            head = node;
         }
     }
 
     /**
-    * Извлечение значения из начала списка без его удаления из списка.
+     * Извлечение значения из начала списка без его удаления из списка.
      * @return data - данные первой ноды списка.
      */
-    public String extractHead(){
-        if(getHead() != null) {
-            return getHead().data;
-        } else return "Список пуст!";
+    public T extractHead(){
+        if(head != null) {
+            return (T) head.data;
+        } else return null;
     }
 
 
@@ -78,29 +45,30 @@ public class LinkedList {
      * Извлечение значения из начала списка с удалением из списка.
      * @return data - данные первой ноды списка.
      */
-    public String extractWithDeleteHead(){
-        if(getHead() != null) {
-            String data = extractHead();
-            if(getHead().next != null) {
-                setHead(getHead().next);
-            } else setHead(null);
+    public T extractWithDeleteHead(){
+        if(head != null) {
+            T data = extractHead();
+            if(head.next != null) {
+                head = head.next;
+            } else head = null;
             return data;
-        } else return "Список пуст!";
+        } else return null;
     }
 
     /**
      * Добавление значения в конец списка.
      * @param data - данные последней ноды списка к установке.
      */
-    public void add(String data) {
-        Node node = new Node(data);
+    public void add(T data) {
+        Node node = new Node();
+        node.data = data;
         //Проверка есть ли ноды в списке
-        if(getHead() == null) {
+        if(head == null) {
             addHead(data);
         } else {
             //Если ноды есть
-            getTail().next = node;
-            setTail(node);
+            tail.next = node;
+            tail = node;
         }
     }
 
@@ -108,28 +76,28 @@ public class LinkedList {
      * Извлечение значения из конца списка без его удаления.
      * @return data - данные последней ноды списка.
      */
-    public String extractTail() {
-        if(getTail() != null) {
-            return getTail().data;
-        } else return "Список пуст!";
+    public T extractTail() {
+        if(tail != null) {
+            return (T) tail.data;
+        } else return null;
     }
 
     /**
      * Извлечение значения из конца списка с удалением.
      * @return data - данные последней ноды списка.
      */
-    public String extractWithDeleteTail(){
-        if(getTail() != null) {
-            String data = extractTail();
+    public T extractWithDeleteTail(){
+        if(tail != null) {
+            T data = extractTail();
             Node temp = new Node();
-            temp = getHead();
-            while(temp.next != getTail()) {
+            temp = head;
+            while(temp.next != tail) {
                 temp = temp.next;
             }
-            setTail(temp);
-            getTail().next = null;
+            tail = temp;
+            tail.next = null;
             return data;
-        } else return "Список пуст!";
+        } else return null;
     }
 
     /**
@@ -138,12 +106,10 @@ public class LinkedList {
      * @return true - данные присутствуют в списке.
      * @return false - данные отсутствуют в списке.
      */
-    public Boolean checkData(String data) {
-        Node temp = getHead();
+    public Boolean checkData(T data) {
+        Node temp = head;
         while(temp != null) {
-            if(temp.data.equals(data)) {
-                return true;
-            }
+            if(temp.data == data) return true;
             temp = temp.next;
         }
         return false;
@@ -155,7 +121,7 @@ public class LinkedList {
      *         false - список пуст.
      */
     public Boolean checkFill() {
-        if(getHead() != null) return true;
+        if(head != null) return true;
         else return false;
     }
 
@@ -165,10 +131,10 @@ public class LinkedList {
      */
     @Override
     public String toString() {
-        if(getHead() != null) {
+        if(head != null) {
             StringBuilder sb = new StringBuilder();
-            sb.append("[").append(getHead().data);
-            Node temp = getHead();
+            sb.append("[").append(head.data);
+            Node temp = head;
             while(temp.next != null) {
                 temp = temp.next;
                 sb.append(", ").append(temp.data);
@@ -182,42 +148,66 @@ public class LinkedList {
      * Удаление заданного значения из списка
      * @param data - данные, по которым осуществляется поиск всех нод с данными для последующего их удаления.
      */
-    public void deleteData(String data) {
+    public void deleteData(T data) {
         Node temp = new Node();
-        temp = getHead();
+        temp = head;
         while(temp != null) {
-            if(temp.data.equals(data)) {
+            if(temp.data == data) {
                 //Если звено первое в списке
-                if(temp == getHead()) {
-                    if(getHead().next != null) {
-                        setHead(getHead().next);
+                if(temp == head) {
+                    if(head.next != null) {
+                        head = head.next;
                     } else {
-                        setHead(null);
-                        setTail(null);
+                        head = null;
+                        tail = null;
                     }
                 }
                 //Если звено в конце
-                else if(temp == getTail()) {
+                else if(temp == tail) {
                     Node temp_delete = new Node();
-                    temp_delete = getHead();
-                    while(temp_delete.next != getTail()) {
+                    temp_delete = head;
+                    while(temp_delete.next != tail) {
                         temp_delete = temp_delete.next;
                     }
-                    setTail(temp_delete);
-                    getTail().next = null;
+                    tail = temp_delete;
+                    tail.next = null;
                 }
                 //Если звено в середине
                 else {
                     Node temp_delete = new Node();
-                    temp_delete = getHead();
+                    temp_delete = head;
                     while(temp_delete.next != temp) {
                         temp_delete = temp_delete.next;
                     }
                     temp_delete.next = temp.next;
                 }
             }
-        temp = temp.next;
+            temp = temp.next;
         }
+    }
+
+    /**
+     * Агрегация значений списка
+     * @return Агрегированную сумму значений
+     */
+    public String sumSize(){
+        if(head==null) return "null";
+        if(head.data instanceof Integer) {
+            int size = 0;
+            Node temp = head;
+            while (temp!=null) {
+                size += (Integer) temp.data;
+                temp = temp.next;
+            }
+            return String.valueOf(size);
+        }
+        StringBuilder sb = new StringBuilder();
+        Node temp = head;
+        while (temp!=null) {
+            sb.append(temp.data);
+            temp = temp.next;
+        }
+        return sb.toString();
     }
 
     /**
@@ -237,7 +227,7 @@ public class LinkedList {
      *      *   10 - Удаление заданного значения из списка.
      * @param data - данные, необходимые для выполнения действия
      */
-    public void action(int action, String data) {
+    public void action(int action, T data) {
         switch (action) {
             case 1:
                 addHead(data);
@@ -274,29 +264,42 @@ public class LinkedList {
         }
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new LinkedListIterator<>(head);
+    }
+
 
     /**
      * Нода списка. Не может существовать вне списка. Содержит дату и ссылку на следующую ноду.
      * Если ссылка равна null, то это последняя нода списка.
      */
-    private class Node {
+    private static class Node<T> {
+        T data;
+        Node next;
+    }
 
-        private String data;
-        private Node next;
+    /**
+     * Переопределение поведения списка.
+     * @param <T>
+     */
+    private static class LinkedListIterator<T> implements Iterator<T> {
+        Node nextNode;
 
-        /**
-         * Конструктор ноды без данных.
-         */
-        public Node() {
-
+        public LinkedListIterator(Node head) {
+            this.nextNode = head;
         }
 
-        /**
-         * Конструктор ноды с данными.
-         * @param data - данные, которые будет хранить нода.
-         */
-        public Node(String data) {
-            this.data = data;
+        @Override
+        public boolean hasNext() {
+            return nextNode != null;
+        }
+
+        @Override
+        public T next() {
+            Node temp = nextNode;
+            nextNode = nextNode.next;
+            return (T) temp.data;
         }
     }
 }
