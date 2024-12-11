@@ -1,4 +1,4 @@
-package src.main.java.org.j120.lab1.ex2;
+package src.main.java.org.j120.lab1.ex5;
 
 import java.util.Iterator;
 
@@ -37,6 +37,19 @@ public class Main {
         }
         System.out.println();
 
+        System.out.println("Выведем наш список в обратном порядке");
+        list.setReverse(true);
+        for (Integer a: list) {
+            System.out.println(a);
+        }
+        System.out.println();
+        list1.setReverse(true);
+        for (String a: list1) {
+            System.out.println(a);
+        }
+        list.setReverse(false);
+        list1.setReverse(false);
+        System.out.println();
 
         System.out.println("Выведем список с остановкой на указанном значении:");
         for (Integer a: list){
@@ -57,7 +70,6 @@ public class Main {
                 iterator.forEachRemaining(System.out::println);
             }
         }
-
         System.out.println();
         Iterator<String> iterator1 =  list1.iterator();
         while (iterator1.hasNext()){
@@ -65,5 +77,41 @@ public class Main {
                 iterator1.forEachRemaining(System.out::println);
             }
         }
+
+        System.out.println("Выведем список от конца до заданного значения:");
+        list.setReverse(true);
+        for (Integer a: list){
+            System.out.println(a);
+            if(a == 4) break;
+        }
+        System.out.println();
+        list1.setReverse(true);
+        for (String a: list1){
+            System.out.println(a);
+            if(a.equals("g")) break;
+        }
+        list.setReverse(false);
+        list1.setReverse(false);
+        System.out.println();
+
+        System.out.println("Выведем список от заданного значения до начала:");
+        list.setReverse(true);
+        Iterator<Integer> iterator2 =  list.iterator();
+        while (iterator2.hasNext()){
+            if(iterator2.next() == 3) {
+                iterator2.forEachRemaining(System.out::println);
+            }
+        }
+        System.out.println();
+        list1.setReverse(true);
+        Iterator<String> iterator3 =  list1.iterator();
+        while (iterator3.hasNext()){
+            if(iterator3.next().equals("o")) {
+                iterator3.forEachRemaining(System.out::println);
+            }
+        }
+        list.setReverse(false);
+        list1.setReverse(false);
+        System.out.println();
     }
 }

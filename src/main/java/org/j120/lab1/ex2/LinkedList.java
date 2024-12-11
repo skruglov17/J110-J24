@@ -187,30 +187,6 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     /**
-     * Агрегация значений списка
-     * @return Агрегированную сумму значений
-     */
-    public String sumSize(){
-        if(head==null) return "null";
-        if(head.data instanceof Integer) {
-            int size = 0;
-            Node temp = head;
-            while (temp!=null) {
-                size += (Integer) temp.data;
-                temp = temp.next;
-            }
-            return String.valueOf(size);
-        }
-        StringBuilder sb = new StringBuilder();
-        Node temp = head;
-        while (temp!=null) {
-            sb.append(temp.data);
-            temp = temp.next;
-        }
-        return sb.toString();
-    }
-
-    /**
      * Выполнение действия, заданного в параметре метода, для каждого значения из списка
      *         /*
      *
