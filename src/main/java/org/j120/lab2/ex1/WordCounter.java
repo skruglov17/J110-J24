@@ -11,7 +11,7 @@ public class WordCounter extends File {
 
     /**
      * Конструктор с указанием названия файла
-     * @param pathname - Название файла. Пример: "j120-lab2_InputFile.txt"
+     * @param pathname - Название файла. Пример: "j120-lab2_Ex1_InputFile.txt"
      */
     public WordCounter(String pathname) {
         super(pathname);
