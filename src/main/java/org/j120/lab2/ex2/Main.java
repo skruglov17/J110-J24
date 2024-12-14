@@ -18,10 +18,10 @@ public class Main {
             inputFile = name;
         }
 
+        //Обработаем файл и выведем в консоль
         ScriptingLanguage file = new ScriptingLanguage(inputFile);
-        ArrayList<String> list = file.splitFile();
         //System.out.println(list);
-        file.printFile(list);
+        file.printFile();
         //System.out.println(file.getHashMap());
     }
 }

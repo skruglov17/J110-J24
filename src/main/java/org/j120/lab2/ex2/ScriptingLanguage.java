@@ -28,7 +28,7 @@ public class ScriptingLanguage extends File {
      * @return Лист строк
      * @throws Exception
      */
-    public ArrayList<String> splitFile() throws Exception {
+    private ArrayList<String> splitFile() throws Exception {
         if (!this.canRead()) throw new Exception("Файл не доступен для чтения!");
         List<String> strings = Files.lines(this.toPath())
                 .flatMap(e -> Arrays.stream(e.split("\n")))
@@ -41,9 +41,9 @@ public class ScriptingLanguage extends File {
     /**
      * Метод для печати в консоль всей информации из файла после преобразования.
      * Выполняем построчно, так как вывести информацию надо в определённый момент времени (текущее значение переменной)
-     * @param list - Лист строк
      */
-    public void printFile(ArrayList<String> list) {
+    public void printFile() throws Exception {
+        ArrayList<String> list = splitFile();
         for (String s : list) {
             //Получим отдельную строку
             s = s.trim();
@@ -153,113 +153,4 @@ public class ScriptingLanguage extends File {
         }
         System.out.println(sb.toString());
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    private HashMap<String, String> hashMap = new HashMap<>();
-//
-//    /**
-//     * Конструктор для хранения файла
-//     * @param pathname
-//     */
-//    public ScriptingLanguage(String pathname) {
-//        super(pathname);
-//    }
-//
-//    /**
-//     * Метод для разбивки файла на строки
-//     * @return Лист строк
-//     * @throws Exception
-//     */
-//    public ArrayList<String> splitFile() throws Exception {
-//        if (!this.canRead()) throw new Exception("Файл не доступен для чтения!");
-//        List<String> strings = Files.lines(this.toPath())
-//                .flatMap(e -> Arrays.stream(e.split("\n#")))
-//                .flatMap(e -> Arrays.stream(e.split("\n")))
-//                .flatMap(e -> Arrays.stream(e.split("\nset")))
-//                .flatMap(e -> Arrays.stream(e.split("\nprint")))
-//                .map(e -> e.trim())
-//                .filter(e -> !e.equals("-") && !e.isEmpty())
-//                .toList();
-//        return new ArrayList<String>(strings);
-//    }
-//
-//    /**
-//     * Метод, возвращающий список значений переменных
-//     * @param strings
-//     * @return
-//     */
-//    public Map<String, Integer> getResult(ArrayList<String> strings) {
-//        Map<String, Integer> hashMap = new HashMap<>();
-//        strings.forEach(e -> {
-//            // Поищем строки начинающиеся с set
-//            if(e.startsWith("set")) {
-//                //Если операции сложения и вычитания
-//                if(e.contains("-") | e.contains("+")) {
-//                    //Найдём параметр, значение которого надо переопределить
-//                    int indexNameFirst = e.indexOf("$");
-//                    int indexNameLast = e.indexOf(" ", indexNameFirst);
-//                    String var = e.substring(indexNameFirst, indexNameLast);
-//                    //Найдем первое значение
-//                    int start = e.indexOf("=");
-//                    int indexValueFirst = e.indexOf("$", start);
-//                    int indexValueLast = e.indexOf(" ", indexValueFirst);
-//                    String sumVar = e.substring(indexValueFirst, indexValueLast);
-//                    int sumValue = hashMap.get(sumVar);
-//                    //Найдем значения для сложения или вычитания
-//                    //Цикл, пока строка не кончилась
-//                    while ((indexValueFirst != -1) & (indexValueLast != -1)) {
-//                        //Смотрим что первее - сложение или вычитание
-//                        //Для вычитаний
-//                        if(e.indexOf("-", indexValueFirst) < e.indexOf("+", indexValueFirst)) {
-//                            indexValueFirst = e.indexOf("-") + 2;
-//                            indexValueLast = e.indexOf(" ", indexValueFirst);
-//                            String varMinus = e.substring(indexValueFirst, indexValueLast);
-//                            int varMinusValue = hashMap.get(varMinus);
-//                            sumValue -= varMinusValue;
-//                        //Для сложений
-//                        } else if (e.indexOf("-", indexValueFirst) > e.indexOf("+", indexValueFirst)){
-//                            indexValueFirst = e.indexOf("+") + 2;
-//                            indexValueLast = e.indexOf(" ", indexValueFirst);
-//                            String varPlus = e.substring(indexValueFirst, indexValueLast);
-//                            int varPlusValue = hashMap.get(varPlus);
-//                            sumValue += varPlusValue;
-//                        } else {
-//                            indexValueFirst = -1;
-//                            indexValueLast = -1;
-//                        }
-//                    }
-//                    //Положим значение параметра
-//                    hashMap.put(var, sumValue);
-//                }
-//                //Иначе сохрани значение параметра
-//                int indexNameFirst = e.indexOf("$");
-//                int indexNameLast = e.indexOf(" ", indexNameFirst);
-//                String var = e.substring(indexNameFirst, indexNameLast);
-//                int indexValueFirst = e.indexOf("=") + 2;
-//                int indexValueLast = e.length();
-//                int value = Integer.parseInt(e.substring(indexValueFirst), indexValueLast);
-//                hashMap.put(var, value);
-//            }
-//        });
-//        return hashMap;
-//    }
-//
-//    public void print(ArrayList<String> strings) {
-//
-//    }
-//
-
 }
