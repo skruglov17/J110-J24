@@ -5,43 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6ad6234-8326-4f64-a942-019255fe1bff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/j120/lab2/PhoneNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/J110-J24/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab1/ex1/Country.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab1/ex1/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab1/ex2/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab1/ex2/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab1/ex2/PublishingHouse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex1/AcademicDegree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex1/LevelingStudy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex1/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex1/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex1/Sex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex1/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex1/Teacher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex2/Document.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex2/File.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex2/FileFormat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex2/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex2/Multimedia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab2/ex2/Picture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab3/ex1/LinkedList$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab3/ex1/LinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab3/ex1/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab3/ex2/LinkedList$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab3/ex2/LinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab3/ex2/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab3/ex3/LinkedList$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab3/ex3/LinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab3/ex3/LinkedListInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab3/ex3/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab4/BooleanLogic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab4/IntegerLogic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab4/LogicInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/lab4/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/j110/lab3/ex1/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j110/lab3/ex1/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/j120/lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j120/lab2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/j120-lab2_InputFile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/j120/lab2/ex1/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/j120/lab2/ex1/WordCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/j120/lab1/ex2/LinkedList$LinkedListIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/j120/lab1/ex2/LinkedList$LinkedListIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/j120/lab1/ex2/LinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/j120/lab1/ex2/LinkedList$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/j120/lab1/ex2/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/J110-J24/src/main/java/org/j120/lab1/ex2/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j120/lab1/ex1/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j120/lab1/ex1/PhoneNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j120/lab1/ex2/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j120/lab1/ex2/LinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +54,12 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.src.main.java.org.j110.lab4.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.src.main.java.org.j120.lab1.ex1.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.src.main.java.org.j120.lab1.ex2.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.src.main.java.org.j120.lab1.ex3.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.src.main.java.org.j120.lab1.ex5.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.src.main.java.org.j120.lab2.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.src.main.java.org.j120.lab2.ex1.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.src.main.java.org.lab1.ex1.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.src.main.java.org.lab1.ex2.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.src.main.java.org.lab2.ex1.Main.executor&quot;: &quot;Run&quot;,
@@ -95,7 +71,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sergei/Documents/GitHub/J110-J24/src/main/java/org/lab2/ex2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sergei/Documents/GitHub/J110-J24&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
@@ -103,16 +79,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sergei\Documents\GitHub\J110-J24" />
+      <recent name="C:\Users\Sergei\Documents\GitHub\J110-J24\src\main\java\org\j120\lab1\ex3" />
       <recent name="C:\Users\Sergei\Documents\GitHub\J110-J24\src\main\java\org\lab2\ex2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.src.main.java.org.j120.lab2.Main">
+  <component name="RunManager" selected="Application.src.main.java.org.j120.lab2.ex1.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j110.lab3.ex2.Main" />
+      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j120.lab1.ex3.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.main.java.org.j110.lab3.ex2.*" />
+          <option name="PATTERN" value="src.main.java.org.j120.lab1.ex5.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,12 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="src.main.java.org.j110.lab3.ex1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j110.lab3.ex1.Main" />
+    <configuration name="src.main.java.org.j120.lab1.ex1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j120.lab1.ex1.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.main.java.org.j110.lab3.ex1.*" />
+          <option name="PATTERN" value="src.main.java.org.j120.lab1.ex1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,12 +111,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="src.main.java.org.j110.lab3.ex3.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j110.lab3.ex3.Main" />
+    <configuration name="src.main.java.org.j120.lab1.ex2.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j120.lab1.ex2.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.main.java.org.j110.lab3.ex3.*" />
+          <option name="PATTERN" value="src.main.java.org.j120.lab1.ex2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,12 +124,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="src.main.java.org.j110.lab4.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j110.lab4.Main" />
+    <configuration name="src.main.java.org.j120.lab1.ex5.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j120.lab1.ex5.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.main.java.org.j110.lab4.*" />
+          <option name="PATTERN" value="src.main.java.org.j120.lab1.ex5.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,12 +137,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="src.main.java.org.j120.lab2.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j120.lab2.Main" />
+    <configuration name="src.main.java.org.j120.lab2.ex1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j120.lab2.ex1.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.main.java.org.j120.lab2.*" />
+          <option name="PATTERN" value="src.main.java.org.j120.lab2.ex1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -174,11 +152,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.src.main.java.org.j120.lab2.Main" />
-        <item itemvalue="Application.src.main.java.org.j110.lab4.Main" />
-        <item itemvalue="Application.src.main.java.org.j110.lab3.ex3.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.src.main.java.org.j110.lab3.ex1.Main" />
+        <item itemvalue="Application.src.main.java.org.j120.lab2.ex1.Main" />
+        <item itemvalue="Application.src.main.java.org.j120.lab1.ex5.Main" />
+        <item itemvalue="Application.src.main.java.org.j120.lab1.ex2.Main" />
+        <item itemvalue="Application.src.main.java.org.j120.lab1.ex1.Main" />
       </list>
     </recent_temporary>
   </component>

@@ -29,7 +29,7 @@ public class PhoneNumber {
      * @param type - Тип номера:
      *             1 - Код региона
      *             2 - Местный номер
-     * @throws Exception
+     * @throws Exception - Исключение по вводу некорректного значения
      */
     private void checkCorrectValue(String value, int type)  throws Exception{
         //Используем в выводе исключения

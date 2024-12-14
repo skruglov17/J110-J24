@@ -9,15 +9,15 @@ import java.util.Iterator;
  */
 public class LinkedList<T> implements Iterable<T> {
 
-    private Node head;
-    private Node tail;
+    private Node<T> head;
+    private Node<T> tail;
 
     /**
      * Добавление значения в начало списка.
      * @param data - данные первой ноды списка к установке.
      */
     public void addHead(T data) {
-        Node node = new Node();
+        Node<T> node = new Node<>();
         node.data = data;
         //Проверка есть ли ноды в списке
         if(head == null) {
@@ -60,7 +60,7 @@ public class LinkedList<T> implements Iterable<T> {
      * @param data - данные последней ноды списка к установке.
      */
     public void add(T data) {
-        Node node = new Node();
+        Node<T> node = new Node<>();
         node.data = data;
         //Проверка есть ли ноды в списке
         if(head == null) {
@@ -89,7 +89,7 @@ public class LinkedList<T> implements Iterable<T> {
     public T extractWithDeleteTail(){
         if(tail != null) {
             T data = extractTail();
-            Node temp = new Node();
+            Node<T> temp = new Node<>();
             temp = head;
             while(temp.next != tail) {
                 temp = temp.next;
@@ -104,10 +104,10 @@ public class LinkedList<T> implements Iterable<T> {
      * Определение, содержит ли список заданное значение.
      * @param data - данные, по которым осуществляется поиск.
      * @return true - данные присутствуют в списке.
-     * @return false - данные отсутствуют в списке.
+     *        false - данные отсутствуют в списке.
      */
     public Boolean checkData(T data) {
-        Node temp = head;
+        Node<T> temp = head;
         while(temp != null) {
             if(temp.data == data) return true;
             temp = temp.next;
@@ -121,8 +121,7 @@ public class LinkedList<T> implements Iterable<T> {
      *         false - список пуст.
      */
     public Boolean checkFill() {
-        if(head != null) return true;
-        else return false;
+        return head != null;
     }
 
     /**
@@ -134,7 +133,7 @@ public class LinkedList<T> implements Iterable<T> {
         if(head != null) {
             StringBuilder sb = new StringBuilder();
             sb.append("[").append(head.data);
-            Node temp = head;
+            Node<T> temp = head;
             while(temp.next != null) {
                 temp = temp.next;
                 sb.append(", ").append(temp.data);
@@ -149,7 +148,7 @@ public class LinkedList<T> implements Iterable<T> {
      * @param data - данные, по которым осуществляется поиск всех нод с данными для последующего их удаления.
      */
     public void deleteData(T data) {
-        Node temp = new Node();
+        Node<T> temp = new Node<>();
         temp = head;
         while(temp != null) {
             if(temp.data == data) {
@@ -164,7 +163,7 @@ public class LinkedList<T> implements Iterable<T> {
                 }
                 //Если звено в конце
                 else if(temp == tail) {
-                    Node temp_delete = new Node();
+                    Node<T> temp_delete = new Node<>();
                     temp_delete = head;
                     while(temp_delete.next != tail) {
                         temp_delete = temp_delete.next;
@@ -174,7 +173,7 @@ public class LinkedList<T> implements Iterable<T> {
                 }
                 //Если звено в середине
                 else {
-                    Node temp_delete = new Node();
+                    Node<T> temp_delete = new Node<>();
                     temp_delete = head;
                     while(temp_delete.next != temp) {
                         temp_delete = temp_delete.next;
@@ -252,7 +251,7 @@ public class LinkedList<T> implements Iterable<T> {
      */
     private static class Node<T> {
         T data;
-        Node next;
+        Node<T> next;
     }
 
     /**
@@ -260,9 +259,9 @@ public class LinkedList<T> implements Iterable<T> {
      * @param <T>
      */
     private static class LinkedListIterator<T> implements Iterator<T> {
-        Node nextNode;
+        Node<T> nextNode;
 
-        public LinkedListIterator(Node head) {
+        public LinkedListIterator(Node<T> head) {
             this.nextNode = head;
         }
 
@@ -273,7 +272,7 @@ public class LinkedList<T> implements Iterable<T> {
 
         @Override
         public T next() {
-            Node temp = nextNode;
+            Node<T> temp = nextNode;
             nextNode = nextNode.next;
             return (T) temp.data;
         }
