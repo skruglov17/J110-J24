@@ -40,12 +40,24 @@ public class Application extends JFrame {
                     nameFile.setText(file.getName());
                     setTitle(file.getAbsolutePath());
                     printText(file);
+                    //Создаём таблицу и передаём массивы
+                    table = new JTable(data, columnNames);
+                    getContentPane().add(panel);
+                    //Разделим список файлов и текст выбранного файла
+                    JSplitPane sp = new JSplitPane(
+                            //Разделение по вертикали
+                            JSplitPane.VERTICAL_SPLIT,
+                            //Добавим разделённую полосу
+                            new JScrollPane(panel),
+                            new JScrollPane(table));
+                    //Добавим расположение списка и текста в окне
+                    add(sp, BorderLayout.CENTER);
+                    //Указываем ширину делителя на указанное кол-во пикселей
+                    sp.setDividerLocation(50);
+                    setVisible(true);
                 }
             }
         });
-        //Создаём таблицу и передаём массивы
-        table = new JTable(data, columnNames);
-        getContentPane().add(panel);
         //Разделим список файлов и текст выбранного файла
         JSplitPane sp = new JSplitPane(
                 //Разделение по вертикали
@@ -79,11 +91,10 @@ public class Application extends JFrame {
             data = new String[1000][columnNames.length];
             for (int i = 0; i < columnNames.length; i++) {
                 columnNames[i] = columnNames[i].trim();
-                data[0][i] = columnNames[i];
             }
             //Читаем все строки файла, разбивая на массив значений
             String line;
-            int countLine = 1;
+            int countLine = 0;
             while((line = br.readLine()) != null) {
                 //Получаем массив строки и убираем пробелы
                 String[] temp = line.split(",");
