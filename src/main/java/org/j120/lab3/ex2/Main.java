@@ -1,4 +1,4 @@
-package src.main.java.org.j120.lab3;
+package src.main.java.org.j120.lab3.ex2;
 
 public class Main {
 
