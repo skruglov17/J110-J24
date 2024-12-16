@@ -9,16 +9,19 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Приложение чтения csv-файлов
+ */
 public class Application extends JFrame {
 
     private static JLabel nameFile;
     private JTable table;
-    /*
-    Сделать их приватными, чтобы данные начитывать сразу???
-     */
     private static String[] columnNames;
     private static String[][] data;
 
+    /**
+     * Конструктор класса. В нём задаются основные параметры по управлению окном приложения
+     */
     public Application() {
         // Создаем окно
         JFrame frame = new JFrame();
@@ -51,12 +54,10 @@ public class Application extends JFrame {
                     table = new JTable(data, columnNames);
                     JScrollPane scrollPane = new JScrollPane(table);
                     panel.add(scrollPane, BorderLayout.CENTER);
-                    //frame.setContentPane(panel);
                 }
             }
         });
     }
-
 
     /**
      * Метод для получения всех данных таблицы из переданного csv-файла
@@ -84,6 +85,7 @@ public class Application extends JFrame {
     private static String[] getColumnNames(String line) {
         //Разбиваем на массив и убираем пробелы
         String[] resultCNames = line.split(",");
+        resultCNames[0] = resultCNames[0].replaceAll("\uFEFF", "");
         for (int i = 0; i < resultCNames.length; i++) {
             resultCNames[i] = resultCNames[i].trim();
         }
@@ -102,12 +104,20 @@ public class Application extends JFrame {
         String line;
         int countLine = 0;
         while((line = br.readLine()) != null) {
-            //Разбиваем строку на массив
-            String[] temp = line.split(",");
+            //Разбиваем строку на массив. Не учитываем запятые внутри кавычек,
+            //Заменяем сдвоенные кавычки на одиночные,
+            //Если значение целиком завёрнуто в кавычки, то убираем их
+            String[] temp = line.split(",(?=(?:[^\"]*\\\"[^\"]*\\\")*[^\"]*$)");
+            for (int i = 0; i < temp.length; i++) {
+                temp[i] = temp[i].trim().replaceAll("\"\"", "\"");
+                if(temp[i].startsWith("\"")) {
+                    temp[i] = temp[i].substring(1, temp[i].length() - 1);
+                }
+            }
             //Проверяем одинаковой ли длины массив с шапкой
             if(temp.length != columnNames.length) {
-                nameFile.setText("Файл не может быть прочитан!");
-                break;
+                nameFile.setText("Ошибка чтения файла! Строки файла содержат разное количество колонок!");
+                throw new IOException("Ошибка чтения файла! Строки файла содержат разное количество колонок!");
             }
             //Делаем копию текущего и создаём массив + 1
             String[][] copyData = resultData;
