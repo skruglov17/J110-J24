@@ -9,27 +9,37 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Приложение чтения csv-файлов
+ */
 public class Application extends JFrame {
 
-    private final JLabel nameFile;
+    private static JLabel nameFile;
     private JTable table;
-    /*
-    Сделать их приватными, чтобы данные начитывать сразу???
-     */
-    private String[] columnNames = {"1", "2"};
-    private String[][] data = {{"3", "4"}, {"5", "6"}};
+    private static String[] columnNames;
+    private static String[][] data;
 
+    /**
+     * Конструктор класса. В нём задаются основные параметры по управлению окном приложения
+     */
     public Application() {
-        //Зададим размер окна и поведение при закрытии
-        setBounds(100, 100, 1200, 600);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //Создадим диалоговое окно с выбором файла
-        JPanel panel = new JPanel();
-        //Добавим вызов окна для выбора csv-файла
+        // Создаем окно
+        JFrame frame = new JFrame();
+        frame.setBounds(100, 100, 1200, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //Создаём панель
+        JPanel panel = new JPanel(new BorderLayout());
+        //Cоздаём кнопку и название файла последовательно
+        Container container = getContentPane();
+        container.setLayout (new FlowLayout(FlowLayout.LEFT));
         JButton button = new JButton("Выбрать файл");
+        container.add(button);
         nameFile = new JLabel("Выбранный файл");
-        panel.add(button);
-        panel.add(nameFile);
+        container.add(nameFile);
+        //Добавляем компоненты на панель
+        panel.add(container, BorderLayout.NORTH);
+        frame.setContentPane(panel);
+        frame.setVisible(true);
         //Выбор файла
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -38,78 +48,90 @@ public class Application extends JFrame {
                 if (choosedFile == JFileChooser.APPROVE_OPTION) {
                     File file = openFile.getSelectedFile();
                     nameFile.setText(file.getName());
-                    setTitle(file.getAbsolutePath());
-                    printText(file);
+                    frame.setTitle(file.getAbsolutePath());
+                    setTableData(file);
                     //Создаём таблицу и передаём массивы
                     table = new JTable(data, columnNames);
-                    getContentPane().add(panel);
-                    //Разделим список файлов и текст выбранного файла
-                    JSplitPane sp = new JSplitPane(
-                            //Разделение по вертикали
-                            JSplitPane.VERTICAL_SPLIT,
-                            //Добавим разделённую полосу
-                            new JScrollPane(panel),
-                            new JScrollPane(table));
-                    //Добавим расположение списка и текста в окне
-                    add(sp, BorderLayout.CENTER);
-                    //Указываем ширину делителя на указанное кол-во пикселей
-                    sp.setDividerLocation(50);
-                    setVisible(true);
+                    JScrollPane scrollPane = new JScrollPane(table);
+                    panel.add(scrollPane, BorderLayout.CENTER);
                 }
             }
         });
-        //Разделим список файлов и текст выбранного файла
-        JSplitPane sp = new JSplitPane(
-                //Разделение по вертикали
-                JSplitPane.VERTICAL_SPLIT,
-                //Добавим разделённую полосу
-                new JScrollPane(panel),
-                new JScrollPane(table));
-        //Добавим расположение списка и текста в окне
-        add(sp, BorderLayout.CENTER);
-        //Указываем ширину делителя на указанное кол-во пикселей
-        sp.setDividerLocation(50);
-        setVisible(true);
     }
 
-
-
-    /*
-    Выделить отдельные методы на получение шапки
-    И на заполнение данных
-    Включить их в конструктор приложения
-    */
-    private void printText(File selectedFile) {
+    /**
+     * Метод для получения всех данных таблицы из переданного csv-файла
+     * @param selectedFile - csv-файл для чтения
+     */
+    private void setTableData(File selectedFile) {
         //Выводим текст файла в приложение
         StringBuilder sb = new StringBuilder();
         //BufferedReader быстрый, т.к. выводит информацию построчно. Идём через него
         try (BufferedReader br = new BufferedReader(new FileReader(selectedFile))) {
             //Получаем шапку таблицы
             String firstLine = br.readLine();
-            //Разбиваем на массив и убираем пробелы
-            columnNames = firstLine.split(",");
-            data = new String[1000][columnNames.length];
-            for (int i = 0; i < columnNames.length; i++) {
-                columnNames[i] = columnNames[i].trim();
-            }
-            //Читаем все строки файла, разбивая на массив значений
-            String line;
-            int countLine = 0;
-            while((line = br.readLine()) != null) {
-                //Получаем массив строки и убираем пробелы
-                String[] temp = line.split(",");
-                //Проверяем одинаковой ли длины массив с шапкой
-                if(temp.length != columnNames.length) {
-                    nameFile.setText("Файл не может быть прочитан!");
-                    break;
-                }
-                for (int i = 0; i < temp.length; i++) {
-                    data[countLine][i] = temp[i].trim();
-                }
-                countLine++;
-            }
+            columnNames = getColumnNames(firstLine);
+            data = getData(br);
         } catch (IOException e) {
             System.out.println("Не был прочитан файл!" + e.getMessage());
         }
+    }
+
+    /**
+     * Метод для получения шапки таблицы
+     * @param line - строка с шапкой таблицы
+     * @return - массив имен колонок таблицы
+     */
+    private static String[] getColumnNames(String line) {
+        //Разбиваем на массив и убираем пробелы
+        String[] resultCNames = line.split(",");
+        resultCNames[0] = resultCNames[0].replaceAll("\uFEFF", "");
+        for (int i = 0; i < resultCNames.length; i++) {
+            resultCNames[i] = resultCNames[i].trim();
+        }
+        return resultCNames;
+    }
+
+    /**
+     * Метод с получением данных таблицы
+     * @param br - буфер строк
+     * @return - массив данных таблицы
+     * @throws IOException
+     */
+    private static String[][] getData(BufferedReader br) throws IOException {
+        //Читаем все строки файла, разбивая на массив значений
+        String[][] resultData = new String[1][columnNames.length];
+        String line;
+        int countLine = 0;
+        while((line = br.readLine()) != null) {
+            //Разбиваем строку на массив. Не учитываем запятые внутри кавычек,
+            //Заменяем сдвоенные кавычки на одиночные,
+            //Если значение целиком завёрнуто в кавычки, то убираем их
+            String[] temp = line.split(",(?=(?:[^\"]*\\\"[^\"]*\\\")*[^\"]*$)");
+            for (int i = 0; i < temp.length; i++) {
+                temp[i] = temp[i].trim().replaceAll("\"\"", "\"");
+                if(temp[i].startsWith("\"")) {
+                    temp[i] = temp[i].substring(1, temp[i].length() - 1);
+                }
+            }
+            //Проверяем одинаковой ли длины массив с шапкой
+            if(temp.length != columnNames.length) {
+                nameFile.setText("Ошибка чтения файла! Строки файла содержат разное количество колонок!");
+                throw new IOException("Ошибка чтения файла! Строки файла содержат разное количество колонок!");
+            }
+            //Делаем копию текущего и создаём массив + 1
+            String[][] copyData = resultData;
+            resultData = new String[countLine+1][temp.length];
+            for (int i = 0; i < countLine; i++) {
+                for (int j = 0; j < temp.length; j++) {
+                    resultData[i][j] = copyData[i][j];
+                }
+            }
+            for (int i = 0; i < temp.length; i++) {
+                resultData[countLine][i] = temp[i].trim();
+            }
+            countLine++;
+        }
+        return resultData;
     }
 }
