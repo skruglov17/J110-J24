@@ -1,6 +1,5 @@
 package org.j130.lab2.ex1;
 
-import java.util.Collection;
 import java.util.Objects;
 
 /**
@@ -105,16 +104,5 @@ public class Product {
     @Override
     public int hashCode() {
         return Objects.hash(article, name, color, price, reminder);
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "article=" + article +
-                ", name='" + name + '\'' +
-                ", color='" + color + '\'' +
-                ", price=" + price +
-                ", reminder=" + reminder +
-                '}';
     }
 }
