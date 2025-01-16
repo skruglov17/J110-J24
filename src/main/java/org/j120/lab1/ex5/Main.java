@@ -1,4 +1,4 @@
-package src.main.java.org.j120.lab1.ex5;
+package org.j120.lab1.ex5;
 
 import java.util.Iterator;
 

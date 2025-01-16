@@ -1,4 +1,4 @@
-package src.main.java.org.j120.lab2.ex2;
+package org.j120.lab2.ex2;
 
 import java.util.ArrayList;
 import java.util.Scanner;

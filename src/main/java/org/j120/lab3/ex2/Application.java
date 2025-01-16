@@ -1,4 +1,4 @@
-package src.main.java.org.j120.lab3.ex2;
+package org.j120.lab3.ex2;
 
 import javax.swing.*;
 import java.awt.*;

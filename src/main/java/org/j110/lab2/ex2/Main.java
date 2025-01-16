@@ -1,4 +1,4 @@
-package src.main.java.org.j110.lab2.ex2;
+package org.j110.lab2.ex2;
 
 public class Main {
     public static void main(String[] args) throws Exception {

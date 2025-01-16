@@ -1,4 +1,4 @@
-package src.main.java.org.j120.lab2.ex1;
+package org.j120.lab2.ex1;
 
 import java.io.BufferedReader;
 import java.util.Collections;

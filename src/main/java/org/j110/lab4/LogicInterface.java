@@ -1,4 +1,4 @@
-package src.main.java.org.j110.lab4;
+package org.j110.lab4;
 
 /**
  * Интерфейс логических значений

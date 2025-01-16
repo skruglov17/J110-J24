@@ -1,4 +1,4 @@
-package src.main.java.org.j120.lab1.ex1;
+package org.j120.lab1.ex1;
 
 import java.util.HashMap;
 import java.util.HashSet;

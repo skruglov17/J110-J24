@@ -1,4 +1,4 @@
-package src.main.java.org.j110.lab3.ex3;
+package org.j110.lab3.ex3;
 
 import java.util.ArrayList;
 import java.util.Arrays;

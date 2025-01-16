@@ -1,4 +1,4 @@
-package src.main.java.org.j110.lab1.ex1;
+package org.j110.lab1.ex1;
 
 public class Main {
 
