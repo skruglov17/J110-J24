@@ -16,12 +16,16 @@ public class DbConnection {
      * @return соединение с БД
      * @throws SQLException
      */
-    public static Connection getConnection() throws SQLException {
+    public static Connection getConnection() {
         ApplicationProperties properties = ApplicationProperties.getInstance();
-        if(connection==null || connection.isClosed()){
-            connection = DriverManager.getConnection(properties.getValue("database_url"),
-                                                     properties.getValue("database_user"),
-                                                     properties.getValue("database_password"));
+        try {
+            if(connection==null || connection.isClosed()){
+                connection = DriverManager.getConnection(properties.getValue("database_url"),
+                        properties.getValue("database_user"),
+                        properties.getValue("database_password"));
+            }
+        } catch (SQLException e) {
+            System.out.println("Ошибка соединения с БД!");
         }
         return connection;
     }
