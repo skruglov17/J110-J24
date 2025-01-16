@@ -1,6 +1,5 @@
 package org.j130.lab2.ex1;
 
-import java.io.*;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
