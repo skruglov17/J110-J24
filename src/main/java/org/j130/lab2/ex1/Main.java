@@ -14,20 +14,31 @@ public class Main {
                                 "3 - Регистрация заказа\n" +
                                 "0 - Выход из приложения");
             Scanner scanner = new Scanner(System.in);
-            int action = scanner.nextInt();
-            switch(action) {
+            String action = scanner.nextLine();
+            switch(Integer.parseInt(action)) {
                 case 1:
                     ShopRepository.printProducts();
                     break;
                 case 2:
                     System.out.println("Введите идентификатор заказа:");
-                    int orderId = scanner.nextInt();
-                    ShopRepository.printProductsByOrderId(orderId);
+                    String orderId = scanner.nextLine();
+                    ShopRepository.printProductsByOrderId(Integer.parseInt(orderId));
                     break;
                 case 3:
-
-                case 4:
-
+                    System.out.println("Введите вашу фамилию, имя и отчество:");
+                    String customerName = scanner.nextLine();
+                    System.out.println("Введите номер вашего телефона:");
+                    String customerNumber = scanner.nextLine();
+                    System.out.println("Введите адреса вашей электронной почты:");
+                    String customerEmail = scanner.nextLine();
+                    System.out.println("Введите полный адрес доставки:");
+                    String deliveryAddress = scanner.nextLine();
+                    System.out.println("Введите артикул приобретаемого товара:");
+                    String productArticle = scanner.nextLine();
+                    System.out.println("Введите количество приобретаемого товара:");
+                    String quantity = scanner.nextLine();
+                    ShopRepository.registrationOrder(customerName, customerNumber, customerEmail, deliveryAddress, Integer.parseInt(productArticle), Integer.parseInt(quantity));
+                    break;
                 case 0:
                     job = false;
                     break;

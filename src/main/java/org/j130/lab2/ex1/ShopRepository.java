@@ -1,7 +1,10 @@
 package org.j130.lab2.ex1;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.LinkedList;
 
 /**
@@ -81,14 +84,17 @@ public class ShopRepository {
 
     public static void registrationOrder(String customerName, String customerNumber, String customerEmail, String deliveryAddress, int productArticle, int quantity){
         Connection connection = DbConnection.getConnection();
-        //Получим текущую дату
         LocalDate localDate = LocalDate.now();
+        LocalDateTime localDateTime = localDate.atStartOfDay();
+        Timestamp timestamp = Timestamp.valueOf(localDateTime);
+        int orderId = -1;
+        int price = -1;
         String query = "INSERT INTO orders VALUES \n" +
                 "\t(DEFAULT, ?, ?, ?, ?, ?, 'P', NULL)";
         try (
                 PreparedStatement statement = connection.prepareStatement(query)
         ) {
-            statement.setString(1, LocalDate.now().toString());
+            statement.setTimestamp(1, timestamp);
             statement.setString(2, customerName);
             statement.setString(3, customerNumber);
             statement.setString(4, customerEmail);
@@ -98,23 +104,49 @@ public class ShopRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        String query2 = "INSERT INTO order_position VALUES \n" +
+        String query2 = "SELECT * FROM orders\n" +
+//                " WHERE create_date = " + timestamp +
+                " WHERE customer_name = '" + customerName +
+                "' AND customer_number = '" + customerNumber +
+                "' AND customer_email = '" + customerEmail +
+                "' AND delivery_address = '" + deliveryAddress +
+                "' AND delivery_status = 'P' AND orders.delivery_datestart = NULL";
+        try (
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(query2)
+        ) {
+            if(resultSet.next()){
+                orderId = resultSet.getInt("order_id");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        String query3 = "SELECT * FROM products \n" +
+                "WHERE product_article = " + (char) productArticle;
+        try (
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(query3)
+        ) {
+            if(resultSet.next()) {
+                price = resultSet.getInt("price");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        String query4 = "INSERT INTO order_position VALUES \n" +
                 "\t(?, ?, ?, ?)";
         try (
-                PreparedStatement statement = connection.prepareStatement(query2)
+                PreparedStatement statement = connection.prepareStatement(query4)
         ) {
-            statement.setString(1, getOrderId());
-            statement.setInt(2, productArticle);
-            statement.setInt(3, getPriceByProductArticle());
+            statement.setInt(1, orderId);
+            statement.setString(2, Character.toChars().toString());
+            statement.setInt(3, price);
             statement.setInt(4, quantity);
             statement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static int getOrderIdByParametres(){
-
     }
 
     /**
