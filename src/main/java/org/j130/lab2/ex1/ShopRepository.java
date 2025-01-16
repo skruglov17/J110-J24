@@ -1,7 +1,6 @@
 package org.j130.lab2.ex1;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -82,6 +81,15 @@ public class ShopRepository {
         }
     }
 
+    /**
+     * Метод, предназначенный для регистрации заказа
+     * @param customerName - ФИО
+     * @param customerNumber - Номер
+     * @param customerEmail - Почта
+     * @param deliveryAddress - Адрес
+     * @param productArticle - Артикль товара
+     * @param quantity - Количество товара
+     */
     public static void registrationOrder(String customerName, String customerNumber, String customerEmail, String deliveryAddress, int productArticle, int quantity){
         Connection connection = DbConnection.getConnection();
         LocalDate localDate = LocalDate.now();
@@ -105,12 +113,11 @@ public class ShopRepository {
             throw new RuntimeException(e);
         }
         String query2 = "SELECT * FROM orders\n" +
-//                " WHERE create_date = " + timestamp +
                 " WHERE customer_name = '" + customerName +
                 "' AND customer_number = '" + customerNumber +
                 "' AND customer_email = '" + customerEmail +
                 "' AND delivery_address = '" + deliveryAddress +
-                "' AND delivery_status = 'P' AND orders.delivery_datestart = NULL";
+                "' AND delivery_status = 'P'";
         try (
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(query2)
@@ -122,7 +129,7 @@ public class ShopRepository {
             throw new RuntimeException(e);
         }
         String query3 = "SELECT * FROM products \n" +
-                "WHERE product_article = " + (char) productArticle;
+                "WHERE product_article = '" + productArticle + "'";
         try (
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(query3)
@@ -140,7 +147,7 @@ public class ShopRepository {
                 PreparedStatement statement = connection.prepareStatement(query4)
         ) {
             statement.setInt(1, orderId);
-            statement.setString(2, Character.toChars().toString());
+            statement.setInt(2, productArticle);
             statement.setInt(3, price);
             statement.setInt(4, quantity);
             statement.execute();

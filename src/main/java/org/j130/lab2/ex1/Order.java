@@ -3,6 +3,9 @@ package org.j130.lab2.ex1;
 import java.util.LinkedList;
 import java.util.Objects;
 
+/**
+ * Класс заказов
+ */
 public class Order {
 
     private int id;
@@ -12,7 +15,10 @@ public class Order {
     private String deliveryAddress;
     private LinkedList<OrderPosition> orderPositions;
 
-
+    /**
+     * Геттеры и сеттеры
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }

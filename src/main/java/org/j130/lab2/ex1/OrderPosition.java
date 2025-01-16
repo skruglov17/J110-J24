@@ -2,6 +2,9 @@ package org.j130.lab2.ex1;
 
 import java.util.Objects;
 
+/**
+ * Класс позиций заказов
+ */
 public class OrderPosition {
 
     private int id;
@@ -10,36 +13,20 @@ public class OrderPosition {
     private int quantity;
     private Product product;
 
-    public int getId() {
-        return id;
-    }
+    /**
+     * Геттеры и сеттеры
+     */
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getProductArticle() {
-        return productArticle;
     }
 
     public void setProductArticle(int productArticle) {
         this.productArticle = productArticle;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public Product getProduct() {
