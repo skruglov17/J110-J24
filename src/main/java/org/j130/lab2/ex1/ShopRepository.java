@@ -1,9 +1,7 @@
 package org.j130.lab2.ex1;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.LinkedList;
 
 /**
@@ -79,6 +77,44 @@ public class ShopRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void registrationOrder(String customerName, String customerNumber, String customerEmail, String deliveryAddress, int productArticle, int quantity){
+        Connection connection = DbConnection.getConnection();
+        //Получим текущую дату
+        LocalDate localDate = LocalDate.now();
+        String query = "INSERT INTO orders VALUES \n" +
+                "\t(DEFAULT, ?, ?, ?, ?, ?, 'P', NULL)";
+        try (
+                PreparedStatement statement = connection.prepareStatement(query)
+        ) {
+            statement.setString(1, LocalDate.now().toString());
+            statement.setString(2, customerName);
+            statement.setString(3, customerNumber);
+            statement.setString(4, customerEmail);
+            statement.setString(5, deliveryAddress);
+            statement.execute();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        String query2 = "INSERT INTO order_position VALUES \n" +
+                "\t(?, ?, ?, ?)";
+        try (
+                PreparedStatement statement = connection.prepareStatement(query2)
+        ) {
+            statement.setString(1, getOrderId());
+            statement.setInt(2, productArticle);
+            statement.setInt(3, getPriceByProductArticle());
+            statement.setInt(4, quantity);
+            statement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static int getOrderIdByParametres(){
+
     }
 
     /**
