@@ -1,5 +1,8 @@
 package org.j130.lab2.ex1;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -14,15 +17,27 @@ public class Main {
                                 "3 - Регистрация заказа\n" +
                                 "0 - Выход из приложения");
             Scanner scanner = new Scanner(System.in);
-            String action = scanner.nextLine();
-            switch(Integer.parseInt(action)) {
+            int action = scanner.nextInt();
+            scanner.nextLine();
+            switch(action) {
                 case 1:
                     ShopRepository.printProducts();
                     break;
                 case 2:
-                    System.out.println("Введите идентификатор заказа:");
-                    String orderId = scanner.nextLine();
-                    ShopRepository.printProductsByOrderId(Integer.parseInt(orderId));
+                    ArrayList<Integer> listId = new ArrayList<>();
+                    boolean jobCase2 = true;
+                    System.out.println("Введение идентификаторов заказов. Для остановки введите \"0\"");
+                    while(jobCase2) {
+                        System.out.println("Введите идентификатор заказа: ");
+                        int orderId = scanner.nextInt();
+                        scanner.nextLine();
+                        if(orderId != 0) listId.add(orderId);
+                        else jobCase2 = false;
+                    }
+                    for (int i = 0; i < listId.size(); i++) {
+                        System.out.println("Товары по заказу с идентификатором " + listId.get(i) + ":");
+                        ShopRepository.printProductsByOrderId(listId.get(i));
+                    }
                     break;
                 case 3:
                     System.out.println("Введите вашу фамилию, имя и отчество:");
@@ -33,15 +48,28 @@ public class Main {
                     String customerEmail = scanner.nextLine();
                     System.out.println("Введите полный адрес доставки:");
                     String deliveryAddress = scanner.nextLine();
-                    System.out.println("Введите артикул приобретаемого товара:");
-                    String productArticle = scanner.nextLine();
-                    System.out.println("Введите количество приобретаемого товара:");
-                    String quantity = scanner.nextLine();
-                    ShopRepository.registrationOrder(customerName, customerNumber, customerEmail, deliveryAddress, Integer.parseInt(productArticle), Integer.parseInt(quantity));
+                    Map<Integer, Integer> productsMap = new HashMap<>();
+                    boolean jobCase3 = true;
+                    System.out.println("Введение артикулов товаров и их количества. Для остановки введите \"0\"");
+                    while(jobCase3) {
+                        System.out.println("Введите артикул товара: ");
+                        int articleProduct = scanner.nextInt();
+                        if(articleProduct == 0) {
+                            jobCase3 = false;
+                            continue;
+                        }
+                        System.out.println("Введите количество товара: ");
+                        int reminderProduct = scanner.nextInt();
+                        productsMap.put(articleProduct, reminderProduct);
+                    }
+                    ShopRepository.registrationOrder(customerName, customerNumber, customerEmail, deliveryAddress, productsMap);
                     break;
                 case 0:
                     job = false;
                     break;
+                default:
+                    break;
+
             }
         }
     }

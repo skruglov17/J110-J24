@@ -3,7 +3,10 @@ package org.j130.lab2.ex1;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Класс товара из БД
@@ -40,6 +43,7 @@ public class ShopRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        System.out.println();
     }
 
     /**
@@ -86,16 +90,15 @@ public class ShopRepository {
      * @param customerNumber - Номер
      * @param customerEmail - Почта
      * @param deliveryAddress - Адрес
-     * @param productArticle - Артикль товара
-     * @param quantity - Количество товара
+     * @param productsMap - Артикли товаров и их количество в заказе
      */
-    public static void registrationOrder(String customerName, String customerNumber, String customerEmail, String deliveryAddress, int productArticle, int quantity){
+    public static void registrationOrder(String customerName, String customerNumber, String customerEmail, String deliveryAddress, Map productsMap){
         Connection connection = DbConnection.getConnection();
         LocalDate localDate = LocalDate.now();
         LocalDateTime localDateTime = localDate.atStartOfDay();
         Timestamp timestamp = Timestamp.valueOf(localDateTime);
         int orderId = -1;
-        int price = -1;
+        Map<Integer, Integer> priceMap = new HashMap<>();
         String query = "INSERT INTO orders VALUES \n" +
                 "\t(DEFAULT, ?, ?, ?, ?, ?, 'P', NULL)";
         try (
@@ -127,32 +130,51 @@ public class ShopRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        String query3 = "SELECT * FROM products \n" +
-                "WHERE product_article = '" + productArticle + "'";
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT * FROM products \n" +
+                "WHERE product_article = ");
+        Set<Map.Entry<Integer, Integer>> set = productsMap.entrySet();
+        int count = 0;
+        for (Map.Entry<Integer, Integer> me : set) {
+            if(count != 0) sb.append(" OR product_article = ");
+            sb.append("'" + me.getKey() + "'");
+            count++;
+        }
+        sb.append(";");
+        String query3 = sb.toString();
         try (
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(query3)
         ) {
-            if(resultSet.next()) {
-                price = resultSet.getInt("price");
+            while (resultSet.next()) {
+                priceMap.put(resultSet.getInt("product_article") , resultSet.getInt("price"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        String query4 = "INSERT INTO order_position VALUES \n" +
-                "\t(?, ?, ?, ?)";
+        sb = new StringBuilder();
+        sb.append("INSERT INTO order_position VALUES ");
+        count = 0;
+        for (Map.Entry<Integer, Integer> me : set) {
+            if(count != 0) sb.append(", ");
+            sb.append("(" + orderId + ", " +
+                    me.getKey() + ", " +
+                    priceMap.get(me.getKey()) + ", " +
+                    me.getValue() + ")"
+            );
+            count++;
+        }
+        sb.append(";");
+        String query4 = sb.toString();
         try (
                 PreparedStatement statement = connection.prepareStatement(query4)
         ) {
-            statement.setInt(1, orderId);
-            statement.setInt(2, productArticle);
-            statement.setInt(3, price);
-            statement.setInt(4, quantity);
             statement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        System.out.println("Заказ успешно добавлен. Спасибо!\n");
     }
 
     /**
