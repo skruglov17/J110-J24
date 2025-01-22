@@ -50,7 +50,18 @@ WHERE orders.delivery_status = 'S'
 ORDER BY orders.order_id ASC;
 
 --Запрос, фиксирующий отгрузку заказа с id=5
-	
+WITH orders_update AS (
+    UPDATE orders
+    SET delivery_status = 'S', delivery_datestart = now()
+    WHERE orders.order_id = 5
+    RETURNING order_id)
+UPDATE products
+SET remainder = remainder - order_position.quantity
+FROM order_position
+LEFT JOIN orders ON orders.order_id = order_position.order_id
+WHERE orders.order_id = 5 AND orders.order_id=order_position.order_id AND order_position.product_article = products.product_article;
+
+
 	--Поставление статуса и даты отгрузки
 UPDATE orders 
 SET delivery_status = 'S', delivery_datestart = '2025-01-12'
