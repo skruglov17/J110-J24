@@ -44,7 +44,7 @@ INSERT INTO products VALUES
 	(3251619, 'Стул столовый с высокой спинкой', 'белый', 3500, 37),
 	(3251620, 'Стул столовый с высокой спинкой', 'коричневый', 3500, 52);
 
-INSERT INTO orders VALUES 
+INSERT INTO orders VALUES
 	(DEFAULT, '2020-11-20', 'Иванов Сергей','(981)123-45-67', NULL, 'ул. Веденеева, 20-1-41', 'S', '2020-11-29'),
 	(DEFAULT, '2020-11-22', 'Комаров Алексей','(921)001-22-33', NULL, 'пр. Пархоменко 51-2-123', 'S', '2020-11-29'),
 	(DEFAULT, '2020-11-28', 'Ирина Викторова','(911)009-88-77', NULL, 'Тихорецкий пр. 21-21', 'P', NULL),
@@ -116,22 +116,20 @@ WHERE orders.delivery_status = 'S'
 ORDER BY orders.order_id ASC;
 
 --Запрос, фиксирующий отгрузку заказа с id=5
-	
-	--Поставление статуса и даты отгрузки
-UPDATE orders 
-SET delivery_status = 'S', delivery_datestart = '2025-01-12'
-WHERE orders.order_id = 5;
-
-	--Для проверки скрипта ниже по уменьшению остатка на складе добавим стульев на склад
+    --Для проверки скрипта ниже по уменьшению остатка на складе добавим стульев на склад
 /*
-UPDATE products 
-SET remainder = 10
-WHERE product_article = '3251617';	
-*/
-	
-	--Уменьшение остатка на складе
 UPDATE products
-SET remainder = remainder - order_position.quantity 
+SET remainder = 10
+WHERE product_article = '3251617';
+*/
+
+WITH orders_update AS (
+    UPDATE orders
+    SET delivery_status = 'S', delivery_datestart = now()
+    WHERE orders.order_id = 5
+    RETURNING order_id)
+UPDATE products
+SET remainder = remainder - order_position.quantity
 FROM order_position
 LEFT JOIN orders ON orders.order_id = order_position.order_id
 WHERE orders.order_id = 5 AND orders.order_id=order_position.order_id AND order_position.product_article = products.product_article;

@@ -50,6 +50,13 @@ WHERE orders.delivery_status = 'S'
 ORDER BY orders.order_id ASC;
 
 --Запрос, фиксирующий отгрузку заказа с id=5
+    --Для проверки скрипта ниже по уменьшению остатка на складе добавим стульев на склад
+/*
+UPDATE products
+SET remainder = 10
+WHERE product_article = '3251617';
+*/
+
 WITH orders_update AS (
     UPDATE orders
     SET delivery_status = 'S', delivery_datestart = now()
@@ -57,26 +64,6 @@ WITH orders_update AS (
     RETURNING order_id)
 UPDATE products
 SET remainder = remainder - order_position.quantity
-FROM order_position
-LEFT JOIN orders ON orders.order_id = order_position.order_id
-WHERE orders.order_id = 5 AND orders.order_id=order_position.order_id AND order_position.product_article = products.product_article;
-
-
-	--Поставление статуса и даты отгрузки
-UPDATE orders 
-SET delivery_status = 'S', delivery_datestart = '2025-01-12'
-WHERE orders.order_id = 5;
-
-	--Для проверки скрипта ниже по уменьшению остатка на складе добавим стульев на склад
-/*
-UPDATE products 
-SET remainder = 10
-WHERE product_article = '3251617';	
-*/
-	
-	--Уменьшение остатка на складе
-UPDATE products
-SET remainder = remainder - order_position.quantity 
 FROM order_position
 LEFT JOIN orders ON orders.order_id = order_position.order_id
 WHERE orders.order_id = 5 AND orders.order_id=order_position.order_id AND order_position.product_article = products.product_article;
