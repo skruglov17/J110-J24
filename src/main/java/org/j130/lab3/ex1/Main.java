@@ -1,4 +1,4 @@
-package org.j130.lab3;
+package org.j130.lab3.ex1;
 
 public class Main {
 
