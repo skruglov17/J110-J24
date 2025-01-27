@@ -4,36 +4,24 @@ public class DataBase {
 
     private int countReaders;
     private int countWriters;
-    private boolean lock;
-     
 
-    public int getCountReaders() {
-        return countReaders;
+    public int getCountReaders() {return countReaders;}
+
+    public int getCountWriters() {return countWriters;}
+
+    public void read(Reader reader) {
+        if(countWriters == 0){
+            countReaders++;
+            System.out.println("Читатель " + reader.getName() + " подключился к БД. На базе читателей: " + countReaders + ", писателей: " + countWriters);
+        } else
+            System.out.println("Читатель " + reader.getName() + " ждёт подключения. На базе читателей: " + countReaders + ", писателей: " + countWriters);
     }
 
-    public void setCountReaders(int countReaders) {
-        this.countReaders = countReaders;
+    public void write(Writer writer) {
+        if(countWriters == 0 && countReaders == 0){
+            countWriters++;
+            System.out.println("Писатель " + writer.getName() + " подключился к БД. На базе читателей: " + countReaders + ", писателей: " + countWriters);
+        } else
+            System.out.println("Писатель " + writer.getName() + " ждёт подключения. На базе читателей: " + countReaders + ", писателей: " + countWriters);
     }
-
-    public int getCountWriters() {
-        return countWriters;
-    }
-
-    public void setCountWriters(int countWriters) {
-        this.countWriters = countWriters;
-    }
-
-    public boolean isLock() {
-        return lock;
-    }
-
-    public void setLock(boolean lock) {
-        this.lock = lock;
-    }
-
-    public void writing() {}
-
-    public void reading() {}
-
-
 }
