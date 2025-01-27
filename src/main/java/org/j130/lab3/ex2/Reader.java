@@ -16,6 +16,8 @@ public class Reader {
         this.name = name;
     }
 
+    public void read(DataBase dataBase){
 
+    }
 
 }

@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6ad6234-8326-4f64-a942-019255fe1bff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab3/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab3/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab3/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab3/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab3/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab3/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab3/Warehouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab3/ex2/Reader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab3/ex2/Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab3/ex2/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab3/ex2/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab3/ex2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab3/ex2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab3/ex2/TypeConnection.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -50,6 +52,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.org.j130.lab2.ex1.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.j130.lab3.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.src.main.java.org.j110.lab4.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.src.main.java.org.j120.lab1.ex1.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.src.main.java.org.j120.lab1.ex2.Main.executor&quot;: &quot;Run&quot;,
@@ -90,7 +93,7 @@
       <recent name="C:\Users\Sergei\Documents\GitHub\J110-J24\src\main\java\org\j130\lab1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.org.j130.lab2.ex1.Main">
+  <component name="RunManager" selected="Application.org.j130.lab3.ex2.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.main.java.org.j120.lab3.ex1.Main" />
       <module name="J110-J24" />
@@ -117,12 +120,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="src.main.java.org.j120.lab2.ex1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j120.lab2.ex1.Main" />
+    <configuration name="org.j130.lab3.ex1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.j130.lab3.ex1.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.main.java.org.j120.lab2.ex1.*" />
+          <option name="PATTERN" value="org.j130.lab3.ex1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,12 +133,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="src.main.java.org.j120.lab2.ex2.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j120.lab2.ex2.Main" />
+    <configuration name="org.j130.lab3.ex2.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.j130.lab3.ex2.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.main.java.org.j120.lab2.ex2.*" />
+          <option name="PATTERN" value="org.j130.lab3.ex2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -158,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.org.j130.lab3.ex2.Main" />
+        <item itemvalue="Application.org.j130.lab3.ex1.Main" />
         <item itemvalue="Application.org.j130.lab2.ex1.Main" />
         <item itemvalue="Application.src.main.java.org.j120.lab3.ex2.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.src.main.java.org.j120.lab2.ex2.Main" />
-        <item itemvalue="Application.src.main.java.org.j120.lab2.ex1.Main" />
       </list>
     </recent_temporary>
   </component>

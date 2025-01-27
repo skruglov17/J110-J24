@@ -13,7 +13,7 @@ public class Main {
             int idName = i;
             new Thread(() -> {
                 Reader reader = new Reader(idName);
-                dataBase.read(reader);
+                reader.read(dataBase);
             }).start();
         }
         System.out.println("Поставщики готовы!");
@@ -23,11 +23,10 @@ public class Main {
             int idName = i;
             new Thread(() -> {
                 Writer writer = new Writer(idName);
-                dataBase.write(writer);
+                writer.write(dataBase);
             }).start();
         }
         System.out.println("Потребители готовы!");
         System.out.println("Склад начал свою работу!");
-
     }
 }

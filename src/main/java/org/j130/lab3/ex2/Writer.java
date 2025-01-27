@@ -16,4 +16,8 @@ public class Writer {
         this.name = name;
     }
 
+    public void write(DataBase dataBase){
+        
+    }
+
 }
