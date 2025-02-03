@@ -12,7 +12,7 @@ public class Main {
         while (true){
             String message = serverMessenger.getMessage();
             LocalDateTime localDateTime = LocalDateTime.now();
-            System.out.println(localDateTime + ". Принято сообщение от клиента: " + message);
+            System.out.println(localDateTime + " | Принято сообщение от клиента: " + message);
             serverMessenger.sendMessage(localDateTime.toString());
         }
     }

@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6ad6234-8326-4f64-a942-019255fe1bff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/applicationTCP.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/tcp/ApplicationProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/tcp/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/tcp/client/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/tcp/client/MessageExchangeSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/tcp/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/AppProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab4/tcp/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/tcp/server/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab4/tcp/server/ServerMessenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/tcp/server/ServerMessenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/client/ClientMessenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/client/ClientMessenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/client/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/server/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/server/ServerMessenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/j130/lab4/udp/server/ServerMessenger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,41 +49,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.j130.lab2.ex1.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.j130.lab3.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.j130.lab3.ex2.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.j110.lab4.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.j120.lab1.ex1.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.j120.lab1.ex2.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.j120.lab1.ex3.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.j120.lab1.ex5.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.j120.lab2.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.j120.lab2.ex1.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.j120.lab2.ex2.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.j120.lab3.ex2.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.lab1.ex1.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.lab1.ex2.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.lab2.ex1.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.lab2.ex2.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.lab3.ex1.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.lab3.ex3.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.src.main.java.org.lab4.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.J110-J24 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.J110-J24 [install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sergei/Documents/GitHub/J110-J24&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.org.j120.lab3.ex1.Main.executor": "Run",
+    "Application.org.j120.lab3.ex2.Main.executor": "Run",
+    "Application.org.j130.lab2.ex1.Main.executor": "Run",
+    "Application.org.j130.lab3.Main.executor": "Run",
+    "Application.org.j130.lab3.ex2.Main.executor": "Run",
+    "Application.org.j130.lab4.tcp.client.Main.executor": "Run",
+    "Application.org.j130.lab4.tcp.server.Main.executor": "Run",
+    "Application.org.j130.lab4.udp.server.Main.executor": "Run",
+    "Application.src.main.java.org.j110.lab4.Main.executor": "Run",
+    "Application.src.main.java.org.j120.lab1.ex1.Main.executor": "Run",
+    "Application.src.main.java.org.j120.lab1.ex2.Main.executor": "Run",
+    "Application.src.main.java.org.j120.lab1.ex3.Main.executor": "Run",
+    "Application.src.main.java.org.j120.lab1.ex5.Main.executor": "Run",
+    "Application.src.main.java.org.j120.lab2.Main.executor": "Run",
+    "Application.src.main.java.org.j120.lab2.ex1.Main.executor": "Run",
+    "Application.src.main.java.org.j120.lab2.ex2.Main.executor": "Run",
+    "Application.src.main.java.org.j120.lab3.ex2.Main.executor": "Run",
+    "Application.src.main.java.org.lab1.ex1.Main.executor": "Run",
+    "Application.src.main.java.org.lab1.ex2.Main.executor": "Run",
+    "Application.src.main.java.org.lab2.ex1.Main.executor": "Run",
+    "Application.src.main.java.org.lab2.ex2.Main.executor": "Run",
+    "Application.src.main.java.org.lab3.ex1.Main.executor": "Run",
+    "Application.src.main.java.org.lab3.ex3.Main.executor": "Run",
+    "Application.src.main.java.org.lab4.Main.executor": "Run",
+    "Maven.J110-J24 [clean].executor": "Run",
+    "Maven.J110-J24 [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Sergei/Documents/GitHub/J110-J24",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.j130.lab4.tcp.client" />
@@ -103,13 +103,13 @@
       <recent name="C:\Users\Sergei\Documents\GitHub\J110-J24\src\main\java\org\j130\lab1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.org.j130.lab4.tcp.client.Main">
-    <configuration name="org.j130.lab2.ex1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.j130.lab2.ex1.Main" />
+  <component name="RunManager" selected="Application.org.j130.lab4.udp.server.Main">
+    <configuration name="org.j120.lab3.ex1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.j120.lab3.ex1.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.j130.lab2.ex1.*" />
+          <option name="PATTERN" value="org.j120.lab3.ex1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,12 +117,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.j130.lab3.ex1.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.j130.lab3.ex1.Main" />
+    <configuration name="org.j120.lab3.ex2.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.j120.lab3.ex2.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.j130.lab3.ex1.*" />
+          <option name="PATTERN" value="org.j120.lab3.ex2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,12 +143,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.j130.lab4.tcp.client.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.j130.lab4.tcp.client.Main" />
+    <configuration name="org.j130.lab4.tcp.server.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.j130.lab4.tcp.server.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.j130.lab4.tcp.client.*" />
+          <option name="PATTERN" value="org.j130.lab4.tcp.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,12 +156,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="src.main.java.org.j120.lab3.ex2.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.main.java.org.j120.lab3.ex2.Main" />
+    <configuration name="org.j130.lab4.udp.server.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.j130.lab4.udp.server.Main" />
       <module name="J110-J24" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.main.java.org.j120.lab3.ex2.*" />
+          <option name="PATTERN" value="org.j130.lab4.udp.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -171,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.org.j130.lab4.tcp.client.Main" />
+        <item itemvalue="Application.org.j130.lab4.udp.server.Main" />
+        <item itemvalue="Application.org.j120.lab3.ex1.Main" />
+        <item itemvalue="Application.org.j120.lab3.ex2.Main" />
+        <item itemvalue="Application.org.j130.lab4.tcp.server.Main" />
         <item itemvalue="Application.org.j130.lab3.ex2.Main" />
-        <item itemvalue="Application.org.j130.lab3.ex1.Main" />
-        <item itemvalue="Application.org.j130.lab2.ex1.Main" />
-        <item itemvalue="Application.src.main.java.org.j120.lab3.ex2.Main" />
       </list>
     </recent_temporary>
   </component>

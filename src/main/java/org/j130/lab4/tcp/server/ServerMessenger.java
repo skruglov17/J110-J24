@@ -51,7 +51,7 @@ public class ServerMessenger {
             //Получим сообщение
             Reader reader = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(reader);
-            return br.readLine() + " " + address;
+            return br.readLine() + " | Адрес клиента: " + address;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
